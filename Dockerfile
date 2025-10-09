@@ -16,7 +16,7 @@ COPY --from=builder /app/.next/static ./.next/static
 COPY --from=builder /app/public ./public
 
 # Puerto de la app
-EXPOSE 3000
+EXPOSE 3001
 
 # Ejecuta el servidor standalone
 CMD ["node", "server.js"]
