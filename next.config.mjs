@@ -1,7 +1,6 @@
 /** @type {import('next').NextConfig} */
-/** @type {import('next').NextConfig} */
 const nextConfig = {
-  output: 'standalone', // ← ESTA ES LA LÍNEA CRÍTICA
+  output: 'standalone', // permite ejecutar en servidor Node (clave para producción)
   eslint: {
     ignoreDuringBuilds: true,
   },
@@ -9,8 +8,11 @@ const nextConfig = {
     ignoreBuildErrors: true,
   },
   images: {
-    unoptimized: true,
+    unoptimized: true, // evita dependencias adicionales de imagen
   },
+  poweredByHeader: false, // seguridad
+  reactStrictMode: true,
+  compress: true, // activa compresión gzip
 }
 
 export default nextConfig
