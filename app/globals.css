@@ -39,7 +39,7 @@
   --sidebar-ring: oklch(0.708 0 0);
 }
 
-/* Updated dark theme with neon cyan color */
+/* Enhanced dark theme with cyan/electric blue neon colors */
 .dark {
   --background: oklch(0.08 0 0);
   --foreground: oklch(0.985 0 0);
@@ -125,7 +125,7 @@
   }
 }
 
-/* Simplified neon utilities using direct color values */
+/* Enhanced neon utilities with airplane animation */
 @layer utilities {
   .neon-text {
     color: oklch(0.75 0.15 195);
@@ -154,7 +154,6 @@
     box-shadow: 0 0 15px oklch(0.75 0.15 195 / 0.2);
   }
 
-  /* Enhanced card with always-active rotating neon and pressed effect */
   .neon-card-rotating {
     position: relative;
     background: linear-gradient(135deg, oklch(0.12 0 0) 0%, oklch(0.18 0 0) 100%);
@@ -188,7 +187,6 @@
     z-index: -1;
   }
 
-  /* Pause animation and add glow on active/pressed state */
   .neon-card-rotating:active::before {
     animation-play-state: paused;
     filter: brightness(1.5);
@@ -203,7 +201,6 @@
     z-index: -1;
   }
 
-  /* Always-active rotating neon effect for tech logos */
   .neon-logo-rotating {
     position: relative;
     border-radius: var(--radius-lg);
@@ -255,7 +252,6 @@
     inherits: false;
   }
 
-  /* Adding neon input focus effect for form fields */
   .neon-input {
     transition: all 0.3s ease;
   }
@@ -264,5 +260,50 @@
     border-color: oklch(0.75 0.15 195);
     box-shadow: 0 0 15px oklch(0.75 0.15 195 / 0.4), inset 0 0 10px oklch(0.75 0.15 195 / 0.1);
     outline: none;
+  }
+
+  /* Added airplane flying animation */
+  @keyframes plane-fly {
+    0% {
+      transform: translate(-100vw, 50vh) rotate(-45deg) scale(0.5);
+      opacity: 0;
+    }
+    20% {
+      opacity: 1;
+    }
+    50% {
+      transform: translate(0, 0) rotate(0deg) scale(1);
+      opacity: 1;
+    }
+    80% {
+      opacity: 1;
+    }
+    100% {
+      transform: translate(100vw, -50vh) rotate(45deg) scale(0.5);
+      opacity: 0;
+    }
+  }
+
+  .animate-plane-fly {
+    animation: plane-fly 2.5s ease-in-out;
+  }
+
+  /* Added neon pulse animation for "ENVIADO" text */
+  @keyframes neon-pulse {
+    0%,
+    100% {
+      text-shadow: 0 0 10px oklch(0.75 0.15 195 / 0.8), 0 0 20px oklch(0.75 0.15 195 / 0.6), 0 0 30px
+        oklch(0.75 0.15 195 / 0.4), 0 0 40px oklch(0.75 0.15 195 / 0.3);
+      transform: scale(1);
+    }
+    50% {
+      text-shadow: 0 0 20px oklch(0.75 0.15 195 / 1), 0 0 30px oklch(0.75 0.15 195 / 0.8), 0 0 40px
+        oklch(0.75 0.15 195 / 0.6), 0 0 50px oklch(0.75 0.15 195 / 0.4), 0 0 60px oklch(0.75 0.15 195 / 0.3);
+      transform: scale(1.05);
+    }
+  }
+
+  .animate-neon-pulse {
+    animation: neon-pulse 1.5s ease-in-out infinite;
   }
 }

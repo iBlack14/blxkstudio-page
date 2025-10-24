@@ -42,11 +42,13 @@ export function Services() {
 
   return (
     <section id="services" className="py-24 relative">
-      <div className="container mx-auto px-4">
+      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-primary/5 to-transparent" />
+
+      <div className="container mx-auto px-4 relative z-10">
         <div className="max-w-6xl mx-auto space-y-12">
           <div className="text-center space-y-4">
             <h2 className="text-4xl md:text-5xl font-bold neon-text-sm">Servicios Principales</h2>
-            <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
+            <p className="text-lg text-muted-foreground max-w-3xl mx-auto leading-relaxed text-pretty">
               Soluciones end-to-end desde la conceptualización hasta la implementación
             </p>
           </div>
@@ -56,12 +58,13 @@ export function Services() {
               <div
                 key={index}
                 className="neon-card-rotating p-6 rounded-lg space-y-4 hover:scale-105 transition-all group"
+                style={{ animationDelay: `${index * 100}ms` }}
               >
                 <div className="w-14 h-14 rounded-lg bg-primary/10 flex items-center justify-center group-hover:neon-glow transition-all">
                   <service.icon className="w-7 h-7 text-primary" />
                 </div>
-                <h3 className="text-xl font-bold text-foreground">{service.title}</h3>
-                <p className="text-sm text-muted-foreground leading-relaxed">{service.description}</p>
+                <h3 className="text-xl font-bold text-foreground text-balance">{service.title}</h3>
+                <p className="text-sm text-muted-foreground leading-relaxed text-pretty">{service.description}</p>
               </div>
             ))}
           </div>

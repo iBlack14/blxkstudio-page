@@ -3,7 +3,7 @@
 import type React from "react"
 
 import { useState } from "react"
-import { X, Send, Loader2 } from "lucide-react"
+import { X, Send, Loader2, Plane } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
@@ -23,6 +23,7 @@ export function ProjectFormModal({ isOpen, onClose }: ProjectFormModalProps) {
   })
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [submitStatus, setSubmitStatus] = useState<"idle" | "success" | "error">("idle")
+  const [showPlaneAnimation, setShowPlaneAnimation] = useState(false)
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
@@ -38,11 +39,13 @@ export function ProjectFormModal({ isOpen, onClose }: ProjectFormModalProps) {
 
       if (response.ok) {
         setSubmitStatus("success")
+        setShowPlaneAnimation(true)
         setFormData({ name: "", email: "", phone: "", company: "", message: "" })
         setTimeout(() => {
+          setShowPlaneAnimation(false)
           onClose()
           setSubmitStatus("idle")
-        }, 2000)
+        }, 3000)
       } else {
         setSubmitStatus("error")
       }
@@ -58,11 +61,21 @@ export function ProjectFormModal({ isOpen, onClose }: ProjectFormModalProps) {
 
   return (
     <div className="fixed inset-0 z-[100] flex items-center justify-center p-4 bg-black/80 backdrop-blur-sm animate-in fade-in duration-200">
-      <div className="relative w-full max-w-2xl max-h-[90vh] overflow-y-auto bg-background rounded-2xl neon-card-rotating p-8 animate-in zoom-in-95 duration-300">
+      {showPlaneAnimation && (
+        <div className="absolute inset-0 z-[110] flex items-center justify-center pointer-events-none overflow-hidden">
+          <div className="absolute inset-0 bg-gradient-to-br from-primary/20 via-transparent to-primary/20 animate-pulse" />
+          <Plane className="w-24 h-24 text-primary neon-glow animate-plane-fly" />
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 mt-20">
+            <h3 className="text-5xl font-bold neon-text animate-neon-pulse">ENVIADO</h3>
+          </div>
+        </div>
+      )}
+
+      <div className="relative w-full max-w-2xl max-h-[90vh] overflow-y-auto bg-card/95 backdrop-blur-xl rounded-2xl neon-card-rotating p-8 animate-in zoom-in-95 duration-300 shadow-2xl">
         {/* Close button */}
         <button
           onClick={onClose}
-          className="absolute top-4 right-4 p-2 rounded-full hover:bg-primary/10 transition-colors"
+          className="absolute top-4 right-4 p-2 rounded-full hover:bg-primary/10 transition-colors z-10"
         >
           <X className="w-5 h-5 text-muted-foreground hover:text-primary" />
         </button>
@@ -70,7 +83,9 @@ export function ProjectFormModal({ isOpen, onClose }: ProjectFormModalProps) {
         {/* Header */}
         <div className="text-center space-y-3 mb-8">
           <h2 className="text-3xl md:text-4xl font-bold neon-text">Iniciar Proyecto</h2>
-          <p className="text-muted-foreground">Cuéntanos sobre tu proyecto y nos pondremos en contacto contigo</p>
+          <p className="text-muted-foreground leading-relaxed">
+            Cuéntanos sobre tu proyecto y nos pondremos en contacto contigo
+          </p>
         </div>
 
         {/* Form */}
@@ -150,14 +165,14 @@ export function ProjectFormModal({ isOpen, onClose }: ProjectFormModalProps) {
           </div>
 
           {/* Status messages */}
-          {submitStatus === "success" && (
-            <div className="p-4 rounded-lg bg-green-500/10 border border-green-500/30 text-green-500 text-sm text-center">
+          {submitStatus === "success" && !showPlaneAnimation && (
+            <div className="p-4 rounded-lg bg-green-500/10 border border-green-500/30 text-green-500 text-sm text-center animate-in fade-in duration-300">
               ¡Mensaje enviado con éxito! Nos pondremos en contacto pronto.
             </div>
           )}
 
           {submitStatus === "error" && (
-            <div className="p-4 rounded-lg bg-red-500/10 border border-red-500/30 text-red-500 text-sm text-center">
+            <div className="p-4 rounded-lg bg-red-500/10 border border-red-500/30 text-red-500 text-sm text-center animate-in fade-in duration-300">
               Hubo un error al enviar el mensaje. Por favor, intenta nuevamente.
             </div>
           )}
@@ -166,7 +181,7 @@ export function ProjectFormModal({ isOpen, onClose }: ProjectFormModalProps) {
           <Button
             type="submit"
             disabled={isSubmitting}
-            className="w-full neon-glow bg-primary text-primary-foreground hover:bg-primary/90 text-lg py-6"
+            className="w-full neon-glow bg-primary text-primary-foreground hover:bg-primary/90 text-lg py-6 transition-all hover:scale-105 active:scale-95"
           >
             {isSubmitting ? (
               <>

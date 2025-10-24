@@ -26,22 +26,26 @@ export function Contact() {
 
   return (
     <section id="contact" className="py-24 relative">
-      <div className="container mx-auto px-4">
+      <div className="absolute inset-0 bg-gradient-to-t from-primary/10 via-transparent to-transparent" />
+
+      <div className="container mx-auto px-4 relative z-10">
         <div className="max-w-6xl mx-auto space-y-16">
           {/* Industries */}
           <div className="space-y-8">
             <div className="text-center space-y-4">
               <h2 className="text-4xl md:text-5xl font-bold neon-text-sm">Sectores e Industrias</h2>
-              <p className="text-lg text-muted-foreground">Experiencia comprobada en múltiples sectores</p>
+              <p className="text-lg text-muted-foreground leading-relaxed">
+                Experiencia comprobada en múltiples sectores
+              </p>
             </div>
 
             <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
               {industries.map((industry, index) => (
                 <div
                   key={index}
-                  className="neon-card p-4 rounded-lg flex items-center gap-3 hover:scale-105 transition-transform"
+                  className="neon-card p-4 rounded-lg flex items-center gap-3 hover:scale-105 transition-all cursor-pointer group"
                 >
-                  <div className="w-2 h-2 rounded-full bg-primary neon-glow" />
+                  <div className="w-2 h-2 rounded-full bg-primary neon-glow group-hover:scale-150 transition-transform" />
                   <span className="text-sm text-foreground">{industry}</span>
                 </div>
               ))}
@@ -49,22 +53,24 @@ export function Contact() {
           </div>
 
           {/* Contact Info */}
-          <div className="neon-card p-12 rounded-lg space-y-8">
+          <div className="neon-card-rotating p-12 rounded-lg space-y-8">
             <div className="text-center space-y-4">
               <h2 className="text-3xl md:text-4xl font-bold neon-text-sm">Contacto</h2>
-              <p className="text-lg text-muted-foreground">¿Listo para transformar tu negocio? Hablemos</p>
+              <p className="text-lg text-muted-foreground leading-relaxed">
+                ¿Listo para transformar tu negocio? Hablemos
+              </p>
             </div>
 
             <div className="grid md:grid-cols-3 gap-8">
               <div className="flex flex-col items-center text-center space-y-3">
-                <div className="w-14 h-14 rounded-full bg-primary/10 flex items-center justify-center neon-border">
+                <div className="w-14 h-14 rounded-full bg-primary/10 flex items-center justify-center neon-border hover:neon-glow transition-all">
                   <Mail className="w-6 h-6 text-primary" />
                 </div>
                 <div>
                   <p className="text-sm text-muted-foreground mb-1">Email</p>
                   <a
                     href="mailto:admin@blxkstudio.com"
-                    className="text-foreground hover:text-primary transition-colors"
+                    className="text-foreground hover:text-primary transition-colors hover:neon-text-sm"
                   >
                     admin@blxkstudio.com
                   </a>
@@ -72,7 +78,7 @@ export function Contact() {
               </div>
 
               <div className="flex flex-col items-center text-center space-y-3">
-                <div className="w-14 h-14 rounded-full bg-primary/10 flex items-center justify-center neon-border">
+                <div className="w-14 h-14 rounded-full bg-primary/10 flex items-center justify-center neon-border hover:neon-glow transition-all">
                   <MapPin className="w-6 h-6 text-primary" />
                 </div>
                 <div>
@@ -82,7 +88,7 @@ export function Contact() {
               </div>
 
               <div className="flex flex-col items-center text-center space-y-3">
-                <div className="w-14 h-14 rounded-full bg-primary/10 flex items-center justify-center neon-border">
+                <div className="w-14 h-14 rounded-full bg-primary/10 flex items-center justify-center neon-border hover:neon-glow transition-all">
                   <Building2 className="w-6 h-6 text-primary" />
                 </div>
                 <div>
@@ -96,7 +102,7 @@ export function Contact() {
               <Button
                 size="lg"
                 onClick={() => setIsFormOpen(true)}
-                className="neon-glow bg-primary text-primary-foreground hover:bg-primary/90"
+                className="neon-glow bg-primary text-primary-foreground hover:bg-primary/90 transition-all hover:scale-105 active:scale-95"
               >
                 Iniciar Proyecto
               </Button>
@@ -104,7 +110,7 @@ export function Contact() {
                 size="lg"
                 onClick={handleWhatsAppContact}
                 variant="outline"
-                className="border-primary/50 text-primary hover:bg-primary/10 bg-transparent"
+                className="border-primary/50 text-primary hover:bg-primary/10 bg-transparent backdrop-blur-sm transition-all hover:scale-105 active:scale-95"
               >
                 <MessageCircle className="w-5 h-5 mr-2" />
                 WhatsApp
