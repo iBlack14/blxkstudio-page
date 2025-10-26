@@ -104,29 +104,39 @@ export function BlxkChatbot() {
 
       {/* Chat Window */}
       {isOpen && (
-        <div
-          className={`fixed bottom-24 right-8 z-40 w-96 max-h-[600px] max-w-[calc(100vw-32px)] rounded-2xl shadow-2xl overflow-hidden transition-all duration-300 flex flex-col ${
-            isDayMode ? "bg-white border border-gray-200" : "bg-slate-900 border border-slate-700"
-          }`}
-        >
-          {/* Header */}
+        <div className="fixed inset-0 z-30 flex items-center justify-center p-4 md:p-8">
           <div
-            className={`p-4 flex justify-between items-start flex-shrink-0 ${
-              isDayMode ? "bg-gradient-to-r from-blue-500 to-cyan-500" : "bg-gradient-to-r from-cyan-500 to-magenta-500"
+            className={`w-full max-w-md max-h-[600px] rounded-2xl shadow-2xl overflow-hidden transition-all duration-300 flex flex-col ${
+              isDayMode ? "bg-white border border-gray-200" : "bg-slate-900 border border-slate-700"
             }`}
           >
-            <div>
-              <h3 className="text-white font-bold text-lg">BLXK Assistant</h3>
-              <p className="text-white/80 text-sm">Información y soporte</p>
-            </div>
-            <button
-              onClick={clearHistory}
-              className="p-1 hover:bg-white/20 rounded transition-colors flex-shrink-0"
-              title="Limpiar historial"
+            {/* Header */}
+            <div
+              className={`p-4 flex justify-between items-start flex-shrink-0 ${
+                isDayMode ? "bg-gradient-to-r from-blue-500 to-cyan-500" : "bg-gradient-to-r from-cyan-500 to-magenta-500"
+              }`}
             >
-              <Trash2 className="w-4 h-4 text-white" />
-            </button>
-          </div>
+              <div>
+                <h3 className="text-white font-bold text-lg">BLXK Assistant</h3>
+                <p className="text-white/80 text-sm">Información y soporte</p>
+              </div>
+              <div className="flex gap-2 flex-shrink-0">
+                <button
+                  onClick={clearHistory}
+                  className="p-1 hover:bg-white/20 rounded transition-colors"
+                  title="Limpiar historial"
+                >
+                  <Trash2 className="w-4 h-4 text-white" />
+                </button>
+                <button
+                  onClick={() => setIsOpen(false)}
+                  className="p-1 hover:bg-white/20 rounded transition-colors"
+                  title="Cerrar chat"
+                >
+                  <X className="w-4 h-4 text-white" />
+                </button>
+              </div>
+            </div>
 
           {/* Messages Container */}
           <div className={`flex-1 overflow-y-auto p-4 space-y-4 ${isDayMode ? "bg-gray-50" : "bg-slate-800"}`}>
@@ -216,6 +226,7 @@ export function BlxkChatbot() {
               </button>
             </div>
           </form>
+        </div>
         </div>
       )}
     </>
