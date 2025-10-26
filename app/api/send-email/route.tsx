@@ -19,14 +19,14 @@ export async function POST(request: NextRequest) {
       return NextResponse.json({ success: false, error: "Email inválido" }, { status: 400 })
     }
 
-    const fromEmail = "noreply@blxkstudio.com"
+    const fromEmail = "admin@blxkstudio.com"
     const adminEmail = process.env.ADMIN_EMAIL || "alonsoyhc@gmail.com"
 
     // Send user confirmation email
     const userEmailResult = await resend.emails.send({
       from: `BLXK STUDIO <${fromEmail}>`,
       to: email,
-      subject: "✈️ Hemos recibido tu solicitud - BLXK STUDIO",
+      subject: "Hemos recibido tu solicitud - BLXK STUDIO",
       html: `
         <!DOCTYPE html>
         <html>
@@ -73,16 +73,16 @@ export async function POST(request: NextRequest) {
           <body>
             <div class="container">
               <div class="header">
-                <h1>✈️ BLXK STUDIO</h1>
+                <h1>BLXK STUDIO</h1>
                 <p>Solicitud de Proyecto Recibida</p>
               </div>
               
               <div class="content">
-                <div class="greeting">¡Hola ${name}!</div>
+                <div class="greeting">Hola ${name},</div>
                 <div class="message">Gracias por tu interés en BLXK STUDIO. Hemos recibido tu solicitud de proyecto y nuestro equipo la está revisando cuidadosamente.</div>
                 
                 <div class="details-box">
-                  <h3>📋 Detalles de tu Solicitud</h3>
+                  <h3>Detalles de tu Solicitud</h3>
                   <div class="detail-row">
                     <div class="detail-label">Nombre:</div>
                     <div class="detail-value">${name}</div>
@@ -119,7 +119,7 @@ export async function POST(request: NextRequest) {
       adminEmailResult = await resend.emails.send({
         from: `BLXK STUDIO <${fromEmail}>`,
         to: adminEmail,
-        subject: `🚀 Nueva Solicitud - ${name}`,
+        subject: `Nueva Solicitud de Proyecto - ${name}`,
         html: `
           <!DOCTYPE html>
           <html>
@@ -183,15 +183,15 @@ export async function POST(request: NextRequest) {
             <body>
               <div class="container">
                 <div class="header">
-                  <h1>🚀 NUEVA SOLICITUD</h1>
+                  <h1>NUEVA SOLICITUD</h1>
                   <p>Proyecto Entrante</p>
                 </div>
                 
                 <div class="content">
-                  <div class="alert-badge">⚡ ACCIÓN REQUERIDA</div>
+                  <div class="alert-badge">ACCION REQUERIDA</div>
                   
                   <div class="details-box">
-                    <h3>👤 Información del Cliente</h3>
+                    <h3>Informacion del Cliente</h3>
                     <div class="detail-row">
                       <div class="detail-label">Nombre:</div>
                       <div class="detail-value"><strong>${name}</strong></div>
@@ -205,7 +205,7 @@ export async function POST(request: NextRequest) {
                   </div>
                   
                   <div class="details-box">
-                    <h3>💬 Detalles del Proyecto</h3>
+                    <h3>Detalles del Proyecto</h3>
                     <div class="message-content">${message}</div>
                   </div>
                   
