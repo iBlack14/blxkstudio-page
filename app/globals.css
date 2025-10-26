@@ -367,7 +367,7 @@
     background: linear-gradient(135deg, oklch(0.08 0 0) 0%, oklch(0.08 0 0) 50%, oklch(0.12 0.08 195) 100%);
   }
 
-  light .hero-gradient-bg {
+  .light .hero-gradient-bg {
     background: linear-gradient(135deg, oklch(0.98 0 0) 0%, oklch(0.96 0.02 195) 50%, oklch(0.92 0.06 195) 100%);
   }
 
@@ -379,7 +379,7 @@
     mask-image: radial-gradient(ellipse 80% 50% at 50% 50%, #000 70%, transparent 110%);
   }
 
-  light .hero-grid-pattern {
+  .light .hero-grid-pattern {
     background-image:
       linear-gradient(to right, oklch(0.92 0 0) 1px, transparent 1px),
       linear-gradient(to bottom, oklch(0.92 0 0) 1px, transparent 1px);
