@@ -24,6 +24,19 @@ export function ProjectFormModal({ isOpen, onClose }: ProjectFormModalProps) {
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [submitStatus, setSubmitStatus] = useState<"idle" | "success" | "error">("idle")
   const [showPlaneAnimation, setShowPlaneAnimation] = useState(false)
+  const [particles, setParticles] = useState<Array<{ id: number; x: number; y: number; tx: number; ty: number }>>([])
+
+  const generateParticles = () => {
+    const newParticles = Array.from({ length: 12 }, (_, i) => ({
+      id: i,
+      x: 0,
+      y: 0,
+      tx: (Math.random() - 0.5) * 200,
+      ty: (Math.random() - 0.5) * 200 - 100,
+    }))
+    setParticles(newParticles)
+    setTimeout(() => setParticles([]), 2000)
+  }
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
@@ -40,6 +53,7 @@ export function ProjectFormModal({ isOpen, onClose }: ProjectFormModalProps) {
       if (response.ok) {
         setSubmitStatus("success")
         setShowPlaneAnimation(true)
+        generateParticles()
         setFormData({ name: "", email: "", phone: "", company: "", message: "" })
         setTimeout(() => {
           setShowPlaneAnimation(false)
@@ -64,14 +78,34 @@ export function ProjectFormModal({ isOpen, onClose }: ProjectFormModalProps) {
       {showPlaneAnimation && (
         <div className="absolute inset-0 z-[110] flex items-center justify-center pointer-events-none overflow-hidden">
           <div className="absolute inset-0 bg-gradient-to-br from-primary/20 via-transparent to-primary/20 animate-pulse" />
+
           <svg
-            className="w-16 h-16 sm:w-24 sm:h-24 text-primary neon-glow animate-plane-fly"
+            className="w-16 h-16 sm:w-24 sm:h-24 text-primary airplane-glow animate-plane-fly"
             viewBox="0 0 24 24"
             fill="currentColor"
           >
-            <path d="M3 3v18h18V3H3zm16 16H5V5h14v14z" />
-            <path d="M7 9h10v2H7z" />
+            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z" />
+            <path d="M12 6c-3.31 0-6 2.69-6 6s2.69 6 6 6 6-2.69 6-6-2.69-6-6-6zm0 10c-2.21 0-4-1.79-4-4s1.79-4 4-4 4 1.79 4 4-1.79 4-4 4z" />
+            <circle cx="12" cy="8" r="1.5" />
           </svg>
+
+          {particles.map((particle) => (
+            <div
+              key={particle.id}
+              className="particle"
+              style={
+                {
+                  left: "50%",
+                  top: "50%",
+                  "--tx": `${particle.tx}px`,
+                  "--ty": `${particle.ty}px`,
+                } as React.CSSProperties
+              }
+            >
+              <div className="w-2 h-2 bg-primary rounded-full opacity-80" />
+            </div>
+          ))}
+
           <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 mt-16 sm:mt-20">
             <h3 className="text-3xl sm:text-5xl font-bold neon-text animate-neon-pulse">ENVIADO</h3>
           </div>
