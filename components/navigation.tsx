@@ -165,7 +165,11 @@ export function Navigation() {
           </a>
           <button
             onClick={toggleTheme}
-            className="p-2 rounded-lg hover:bg-primary/10 transition-colors flex-shrink-0"
+            className={`p-2 rounded-lg transition-colors flex-shrink-0 ${
+              theme === "light"
+                ? "text-primary hover:bg-primary/10"
+                : "text-primary hover:bg-primary/20"
+            }`}
             title={`Cambiar a modo ${theme === "light" ? "oscuro" : "claro"}`}
           >
             {mounted && (theme === "light" ? "🌙" : "☀️")}
