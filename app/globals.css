@@ -190,6 +190,12 @@
     box-shadow: 0 0 15px oklch(0.75 0.15 195 / 0.2);
   }
 
+  light .neon-card {
+    background: linear-gradient(135deg, oklch(0.96 0.04 200) 0%, oklch(0.94 0.06 195) 100%);
+    border: 1px solid oklch(0.55 0.15 195 / 0.4);
+    box-shadow: 0 0 15px oklch(0.55 0.15 195 / 0.15);
+  }
+
   .neon-card-rotating {
     position: relative;
     background: linear-gradient(135deg, oklch(0.12 0 0) 0%, oklch(0.18 0 0) 100%);
@@ -197,6 +203,10 @@
     overflow: hidden;
     transition: transform 0.2s ease, box-shadow 0.2s ease;
     cursor: pointer;
+  }
+
+  light .neon-card-rotating {
+    background: linear-gradient(135deg, oklch(0.96 0.04 200) 0%, oklch(0.94 0.06 195) 100%);
   }
 
   .neon-card-rotating:active {
