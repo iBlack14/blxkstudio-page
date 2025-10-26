@@ -1,11 +1,15 @@
-'use client'
+"use client"
 
-import * as React from 'react'
-import {
-  ThemeProvider as NextThemesProvider,
-  type ThemeProviderProps,
-} from 'next-themes'
+import type React from "react"
 
-export function ThemeProvider({ children, ...props }: ThemeProviderProps) {
-  return <NextThemesProvider {...props}>{children}</NextThemesProvider>
+import { useTheme } from "@/hooks/use-theme"
+
+export function ThemeProvider({ children }: { children: React.ReactNode }) {
+  const { mounted } = useTheme()
+
+  if (!mounted) {
+    return <>{children}</>
+  }
+
+  return <>{children}</>
 }

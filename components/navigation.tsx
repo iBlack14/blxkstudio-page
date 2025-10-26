@@ -4,12 +4,14 @@ import { useState, useEffect, useRef } from "react"
 import { Button } from "@/components/ui/button"
 import { Home, Info, Briefcase, Code, FolderOpen, Mail } from "lucide-react"
 import { ProjectFormModal } from "./project-form-modal"
+import { useTheme } from "@/hooks/use-theme"
 
 export function Navigation() {
   const [isScrolled, setIsScrolled] = useState(false)
   const [activeSection, setActiveSection] = useState("hero")
   const [isFormOpen, setIsFormOpen] = useState(false)
   const mobileNavRef = useRef<HTMLDivElement>(null)
+  const { theme, toggleTheme, mounted } = useTheme()
 
   useEffect(() => {
     const handleScroll = () => {
@@ -110,6 +112,13 @@ export function Navigation() {
                   {item.label}
                 </a>
               ))}
+              <button
+                onClick={toggleTheme}
+                className="p-2 rounded-lg hover:bg-primary/10 transition-colors"
+                title={`Cambiar a modo ${theme === "light" ? "oscuro" : "claro"}`}
+              >
+                {mounted && (theme === "light" ? "🌙" : "☀️")}
+              </button>
               <Button
                 onClick={() => setIsFormOpen(true)}
                 className="neon-glow bg-primary text-primary-foreground hover:bg-primary/90"

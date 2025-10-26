@@ -5,6 +5,7 @@ import { TechStack } from "@/components/tech-stack"
 import { Portfolio } from "@/components/portfolio"
 import { Contact } from "@/components/contact"
 import { Navigation } from "@/components/navigation"
+import { BlxkChatbot } from "@/components/blxk-chatbot"
 
 export default function Home() {
   return (
@@ -16,6 +17,7 @@ export default function Home() {
       <TechStack />
       <Portfolio />
       <Contact />
+      <BlxkChatbot />
     </main>
   )
 }

@@ -4,6 +4,7 @@ import { Geist } from "next/font/google"
 import { Geist_Mono } from "next/font/google"
 import { Suspense } from "react"
 import "./globals.css"
+import { ThemeProvider } from "@/components/theme-provider"
 
 const geistSans = Geist({
   subsets: ["latin"],
@@ -28,9 +29,11 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="es" className={`${geistSans.variable} ${geistMono.variable} scroll-smooth dark`}>
+    <html lang="es" className={`${geistSans.variable} ${geistMono.variable} scroll-smooth`}>
       <body className="font-sans antialiased">
-        <Suspense fallback={null}>{children}</Suspense>
+        <ThemeProvider>
+          <Suspense fallback={null}>{children}</Suspense>
+        </ThemeProvider>
       </body>
     </html>
   )
