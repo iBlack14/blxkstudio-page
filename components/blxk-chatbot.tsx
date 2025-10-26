@@ -92,9 +92,9 @@ export function BlxkChatbot() {
       {/* Floating Button */}
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className={`fixed bottom-8 right-8 z-40 p-4 rounded-full shadow-2xl transition-all duration-300 ${
+        className={`fixed z-40 p-4 rounded-full shadow-2xl transition-all duration-300 md:bottom-8 md:right-8 bottom-24 right-8 ${
           isDayMode
-            ? "bg-gradient-to-br from-blue-500 to-cyan-500 hover:shadow-blue-500/50"
+            ? "bg-gradient-to-br from-cyan-400 to-cyan-500 hover:shadow-cyan-400/50"
             : "bg-gradient-to-br from-cyan-500 to-magenta-500 hover:shadow-cyan-500/50"
         } hover:scale-110 shadow-lg hover:shadow-2xl`}
         aria-label="Open BLXK Chatbot"
