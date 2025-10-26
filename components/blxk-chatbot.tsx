@@ -120,22 +120,13 @@ export function BlxkChatbot() {
                 <h3 className="text-white font-bold text-lg">BLXK Assistant</h3>
                 <p className="text-white/80 text-sm">Información y soporte</p>
               </div>
-              <div className="flex gap-2 flex-shrink-0">
-                <button
-                  onClick={clearHistory}
-                  className="p-1 hover:bg-white/20 rounded transition-colors"
-                  title="Limpiar historial"
-                >
-                  <Trash2 className="w-4 h-4 text-white" />
-                </button>
-                <button
-                  onClick={() => setIsOpen(false)}
-                  className="p-1 hover:bg-white/20 rounded transition-colors"
-                  title="Cerrar chat"
-                >
-                  <X className="w-4 h-4 text-white" />
-                </button>
-              </div>
+              <button
+                onClick={clearHistory}
+                className="p-1 hover:bg-white/20 rounded transition-colors flex-shrink-0"
+                title="Limpiar historial"
+              >
+                <Trash2 className="w-4 h-4 text-white" />
+              </button>
             </div>
 
           {/* Messages Container */}
