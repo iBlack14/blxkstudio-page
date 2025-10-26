@@ -247,6 +247,10 @@
     z-index: -1;
   }
 
+  light .neon-card-rotating::after {
+    background: linear-gradient(135deg, oklch(0.96 0.04 200) 0%, oklch(0.94 0.06 195) 100%);
+  }
+
   .neon-logo-rotating {
     position: relative;
     border-radius: var(--radius-lg);
