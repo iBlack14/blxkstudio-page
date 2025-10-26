@@ -135,9 +135,19 @@
       oklch(0.75 0.15 195 / 0.4);
   }
 
+  light .neon-text {
+    color: oklch(0.55 0.15 195);
+    text-shadow: 0 0 8px oklch(0.55 0.15 195 / 0.4), 0 0 16px oklch(0.55 0.15 195 / 0.2);
+  }
+
   .neon-text-sm {
     color: oklch(0.75 0.15 195);
     text-shadow: 0 0 5px oklch(0.75 0.15 195 / 0.8), 0 0 10px oklch(0.75 0.15 195 / 0.6);
+  }
+
+  light .neon-text-sm {
+    color: oklch(0.55 0.15 195);
+    text-shadow: 0 0 4px oklch(0.55 0.15 195 / 0.3), 0 0 8px oklch(0.55 0.15 195 / 0.2);
   }
 
   .neon-border {
