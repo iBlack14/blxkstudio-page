@@ -106,7 +106,7 @@ export function BlxkChatbot() {
 
       {/* Chat Window */}
       {isOpen && (
-        <div className="fixed inset-0 z-30 flex items-center justify-center p-4 md:inset-auto md:bottom-24 md:right-8 md:w-96 md:max-h-[600px] md:flex md:items-stretch md:justify-end md:p-0">
+        <div className="fixed inset-0 z-30 flex items-center justify-center p-4 md:inset-auto md:bottom-8 md:right-8 md:w-96 md:max-h-[600px] md:flex md:items-stretch md:justify-end md:p-0">
           <div
             className={`w-full max-h-[80vh] md:h-auto rounded-2xl shadow-2xl overflow-hidden transition-all duration-300 flex flex-col ${
               isDayMode ? "bg-white border border-gray-200" : "bg-slate-900 border border-slate-700"
