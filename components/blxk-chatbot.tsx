@@ -90,43 +90,55 @@ export function BlxkChatbot() {
   return (
     <>
       {/* Floating Button */}
-      <button
-        onClick={() => setIsOpen(!isOpen)}
-        className={`fixed z-40 p-4 rounded-full shadow-2xl transition-all duration-300 md:bottom-8 md:right-8 bottom-24 right-8 ${
-          isDayMode
-            ? "bg-gradient-to-br from-cyan-400 to-cyan-500 hover:shadow-cyan-400/50"
-            : "bg-gradient-to-br from-cyan-500 to-magenta-500 hover:shadow-cyan-500/50"
-        } hover:scale-110 shadow-lg hover:shadow-2xl`}
-        aria-label="Open BLXK Chatbot"
-      >
-        {isOpen ? <X className="w-6 h-6 text-white" /> : <MessageCircle className="w-6 h-6 text-white" />}
-      </button>
+      {!isOpen && (
+        <button
+          onClick={() => setIsOpen(true)}
+          className={`fixed z-40 p-4 rounded-full shadow-2xl transition-all duration-300 md:bottom-8 md:right-8 bottom-24 right-8 ${
+            isDayMode
+              ? "bg-gradient-to-br from-cyan-400 to-cyan-500 hover:shadow-cyan-400/50"
+              : "bg-gradient-to-br from-cyan-500 to-magenta-500 hover:shadow-cyan-500/50"
+          } hover:scale-110 shadow-lg hover:shadow-2xl`}
+          aria-label="Open BLXK Chatbot"
+        >
+          <MessageCircle className="w-6 h-6 text-white" />
+        </button>
+      )}
 
       {/* Chat Window */}
       {isOpen && (
-        <div
-          className={`fixed bottom-24 right-8 z-40 w-96 max-h-[600px] max-w-[calc(100vw-32px)] rounded-2xl shadow-2xl overflow-hidden transition-all duration-300 flex flex-col ${
-            isDayMode ? "bg-white border border-gray-200" : "bg-slate-900 border border-slate-700"
-          }`}
-        >
-          {/* Header */}
+        <div className="fixed bottom-20 left-0 right-0 z-30 flex items-end justify-center p-4 md:inset-auto md:bottom-8 md:right-8 md:w-96 md:max-h-[600px] md:flex md:items-stretch md:justify-end md:p-0">
           <div
-            className={`p-4 flex justify-between items-start flex-shrink-0 ${
-              isDayMode ? "bg-gradient-to-r from-blue-500 to-cyan-500" : "bg-gradient-to-r from-cyan-500 to-magenta-500"
+            className={`w-full max-h-[80vh] md:h-auto rounded-2xl shadow-2xl overflow-hidden transition-all duration-300 flex flex-col ${
+              isDayMode ? "bg-white border border-gray-200" : "bg-slate-900 border border-slate-700"
             }`}
           >
-            <div>
-              <h3 className="text-white font-bold text-lg">BLXK Assistant</h3>
-              <p className="text-white/80 text-sm">Información y soporte</p>
-            </div>
-            <button
-              onClick={clearHistory}
-              className="p-1 hover:bg-white/20 rounded transition-colors flex-shrink-0"
-              title="Limpiar historial"
+            {/* Header */}
+            <div
+              className={`p-4 flex justify-between items-start flex-shrink-0 ${
+                isDayMode ? "bg-gradient-to-r from-blue-500 to-cyan-500" : "bg-gradient-to-r from-cyan-500 to-magenta-500"
+              }`}
             >
-              <Trash2 className="w-4 h-4 text-white" />
-            </button>
-          </div>
+              <div>
+                <h3 className="text-white font-bold text-lg">BLXK Assistant</h3>
+                <p className="text-white/80 text-sm">Información y soporte</p>
+              </div>
+              <div className="flex gap-2 flex-shrink-0">
+                <button
+                  onClick={clearHistory}
+                  className="p-1 hover:bg-white/20 rounded transition-colors"
+                  title="Limpiar historial"
+                >
+                  <Trash2 className="w-4 h-4 text-white" />
+                </button>
+                <button
+                  onClick={() => setIsOpen(false)}
+                  className="p-1 hover:bg-white/20 rounded transition-colors"
+                  title="Cerrar chat"
+                >
+                  <X className="w-4 h-4 text-white" />
+                </button>
+              </div>
+            </div>
 
           {/* Messages Container */}
           <div className={`flex-1 overflow-y-auto p-4 space-y-4 ${isDayMode ? "bg-gray-50" : "bg-slate-800"}`}>
@@ -216,6 +228,7 @@ export function BlxkChatbot() {
               </button>
             </div>
           </form>
+        </div>
         </div>
       )}
     </>
