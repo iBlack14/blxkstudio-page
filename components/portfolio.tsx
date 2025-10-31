@@ -1,4 +1,5 @@
 import { ExternalLink, CheckCircle2 } from "lucide-react"
+import Link from "next/link"
 import { Button } from "@/components/ui/button"
 
 export function Portfolio() {
@@ -89,9 +90,11 @@ export function Portfolio() {
           </div>
 
           <div className="text-center pt-8">
-            <Button size="lg" className="neon-glow bg-primary text-primary-foreground hover:bg-primary/90">
-              Ver Todos los Proyectos
-            </Button>
+            <Link href="/projects">
+              <Button size="lg" className="neon-glow bg-primary text-primary-foreground hover:bg-primary/90">
+                Ver Todos los Proyectos
+              </Button>
+            </Link>
           </div>
         </div>
       </div>

@@ -46,11 +46,11 @@ export function Navigation() {
   }, [activeSection])
 
   const navItems = [
-    { label: "Inicio", href: "#hero", icon: Home, id: "hero" },
+    { label: "Inicio", href: "/", icon: Home, id: "hero" },
     { label: "Nosotros", href: "#about", icon: Info, id: "about" },
     { label: "Servicios", href: "#services", icon: Briefcase, id: "services" },
     { label: "Stack", href: "#tech", icon: Code, id: "tech" },
-    { label: "Portfolio", href: "#portfolio", icon: FolderOpen, id: "portfolio" },
+    { label: "Portfolio", href: "/projects", icon: FolderOpen, id: "portfolio" },
     { label: "Contacto", href: "#contact", icon: Mail, id: "contact" },
   ]
 
@@ -115,9 +115,7 @@ export function Navigation() {
               <button
                 onClick={toggleTheme}
                 className={`p-2 rounded-lg transition-colors ${
-                  theme === "light"
-                    ? "text-primary hover:bg-primary/10"
-                    : "text-primary hover:bg-primary/20"
+                  theme === "light" ? "text-primary hover:bg-primary/10" : "text-primary hover:bg-primary/20"
                 }`}
                 title={`Cambiar a modo ${theme === "light" ? "oscuro" : "claro"}`}
               >
@@ -170,9 +168,7 @@ export function Navigation() {
           <button
             onClick={toggleTheme}
             className={`p-2 rounded-lg transition-colors flex-shrink-0 ${
-              theme === "light"
-                ? "text-primary hover:bg-primary/10"
-                : "text-primary hover:bg-primary/20"
+              theme === "light" ? "text-primary hover:bg-primary/10" : "text-primary hover:bg-primary/20"
             }`}
             title={`Cambiar a modo ${theme === "light" ? "oscuro" : "claro"}`}
           >
