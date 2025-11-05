@@ -71,7 +71,7 @@ export function TechStack() {
                         <img
                           src={tech.logo || "/placeholder.svg"}
                           alt={tech.name}
-                          className="w-full h-full object-contain filter brightness-0 invert group-hover:brightness-100 group-hover:invert-0 transition-all relative z-10"
+                          className="w-full h-full object-contain group-hover:scale-110 transition-transform relative z-10"
                         />
                       </div>
                       <span className="text-sm text-muted-foreground group-hover:text-primary transition-colors">
