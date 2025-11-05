@@ -5,7 +5,7 @@ import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { Card3DEffect } from "./3d-card-effect"
 
-export function Portfolio() {
+export function InteractivePortfolio() {
   const projects = [
     {
       name: "Wazilrest",

@@ -128,7 +128,7 @@ export function ProjectsShowcase() {
               return (
                 <div key={project.id} className="group relative" style={{ animationDelay: `${index * 100}ms` }}>
                   <div
-                    className={`bg-gradient-to-r ${project.color} rounded-lg md:rounded-xl p-6 md:p-12 neon-card hover:shadow-lg transition-all duration-300 border border-primary/20`}
+                    className={`bg-gradient-to-r ${project.color} rounded-lg md:rounded-xl p-6 md:p-12 neon-card-rotating hover:shadow-lg transition-all duration-300`}
                   >
                     {/* Top Section - Grid responsive para móvil */}
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 mb-6 md:mb-8">

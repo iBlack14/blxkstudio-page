@@ -196,6 +196,7 @@
     box-shadow: 0 0 15px oklch(0.55 0.15 195 / 0.15);
   }
 
+  /* Mejorar neon-card-rotating para que el borde esté siempre visible y se pause en hover */
   .neon-card-rotating {
     position: relative;
     background: linear-gradient(135deg, oklch(0.12 0 0) 0%, oklch(0.18 0 0) 100%);
@@ -203,10 +204,24 @@
     overflow: hidden;
     transition: transform 0.2s ease, box-shadow 0.2s ease;
     cursor: pointer;
+    border: 1.5px solid oklch(0.75 0.15 195 / 0.6);
+    box-shadow: 0 0 15px oklch(0.75 0.15 195 / 0.4), inset 0 0 8px oklch(0.75 0.15 195 / 0.15);
   }
 
   .light .neon-card-rotating {
     background: linear-gradient(135deg, oklch(0.96 0.04 200) 0%, oklch(0.94 0.06 195) 100%);
+    border: 1.5px solid oklch(0.55 0.15 195 / 0.5);
+    box-shadow: 0 0 12px oklch(0.55 0.15 195 / 0.3), inset 0 0 6px oklch(0.55 0.15 195 / 0.1);
+  }
+
+  .neon-card-rotating:hover {
+    box-shadow: 0 0 30px oklch(0.75 0.15 195 / 0.6), inset 0 0 15px oklch(0.75 0.15 195 / 0.25);
+    border-color: oklch(0.75 0.15 195 / 0.8);
+  }
+
+  .light .neon-card-rotating:hover {
+    box-shadow: 0 0 25px oklch(0.55 0.15 195 / 0.4), inset 0 0 12px oklch(0.55 0.15 195 / 0.15);
+    border-color: oklch(0.55 0.15 195 / 0.7);
   }
 
   .neon-card-rotating:active {
@@ -231,11 +246,12 @@
     border-radius: var(--radius-lg);
     animation: rotate-border 3s linear infinite;
     z-index: -1;
+    opacity: 0.8;
   }
 
-  .neon-card-rotating:active::before {
+  /* Pausar animación del borde en hover */
+  .neon-card-rotating:hover::before {
     animation-play-state: paused;
-    filter: brightness(1.5);
   }
 
   .neon-card-rotating::after {
@@ -376,16 +392,14 @@
   }
 
   .hero-grid-pattern {
-    background-image:
-      linear-gradient(to right, oklch(0.12 0 0) 1px, transparent 1px),
+    background-image: linear-gradient(to right, oklch(0.12 0 0) 1px, transparent 1px),
       linear-gradient(to bottom, oklch(0.12 0 0) 1px, transparent 1px);
     background-size: 4rem 4rem;
     mask-image: radial-gradient(ellipse 80% 50% at 50% 50%, #000 70%, transparent 110%);
   }
 
   .light .hero-grid-pattern {
-    background-image:
-      linear-gradient(to right, oklch(0.92 0 0) 1px, transparent 1px),
+    background-image: linear-gradient(to right, oklch(0.92 0 0) 1px, transparent 1px),
       linear-gradient(to bottom, oklch(0.92 0 0) 1px, transparent 1px);
     background-size: 4rem 4rem;
     mask-image: radial-gradient(ellipse 80% 50% at 50% 50%, #000 70%, transparent 110%);

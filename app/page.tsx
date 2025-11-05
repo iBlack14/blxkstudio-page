@@ -1,6 +1,6 @@
-import { Hero } from "@/components/hero"
+import { FounderHero } from "@/components/founder-hero"
 import { About } from "@/components/about"
-import { Services } from "@/components/services"
+import { Services3D } from "@/components/services-3d"
 import { TechStack } from "@/components/tech-stack"
 import { Portfolio } from "@/components/portfolio"
 import { Contact } from "@/components/contact"
@@ -11,9 +11,9 @@ export default function Home() {
   return (
     <main className="min-h-screen bg-background">
       <Navigation />
-      <Hero />
+      <FounderHero />
       <About />
-      <Services />
+      <Services3D />
       <TechStack />
       <Portfolio />
       <Contact />

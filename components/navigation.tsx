@@ -12,6 +12,15 @@ export function Navigation() {
   const [isFormOpen, setIsFormOpen] = useState(false)
   const mobileNavRef = useRef<HTMLDivElement>(null)
   const { theme, toggleTheme, mounted } = useTheme()
+  const pathname = typeof window !== "undefined" ? window.location.pathname : "/"
+
+  useEffect(() => {
+    if (pathname === "/projects" || pathname === "/portfolio") {
+      setActiveSection("portfolio")
+    } else {
+      setActiveSection("hero")
+    }
+  }, [pathname])
 
   useEffect(() => {
     const handleScroll = () => {
@@ -50,7 +59,7 @@ export function Navigation() {
     { label: "Nosotros", href: "#about", icon: Info, id: "about" },
     { label: "Servicios", href: "#services", icon: Briefcase, id: "services" },
     { label: "Stack", href: "#tech", icon: Code, id: "tech" },
-    { label: "Portfolio", href: "/projects", icon: FolderOpen, id: "portfolio" },
+    { label: "Portafolio", href: "/projects", icon: FolderOpen, id: "portfolio" },
     { label: "Contacto", href: "#contact", icon: Mail, id: "contact" },
   ]
 
