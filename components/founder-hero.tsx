@@ -17,7 +17,7 @@ export function FounderHero() {
   }, [])
 
   return (
-    <section className="relative min-h-screen w-full overflow-hidden bg-background flex items-center pt-4">
+    <section className="relative w-full overflow-hidden bg-background flex items-center py-8 md:py-12 lg:py-20">
       <div className="absolute inset-0">
         {/* Dynamic lightning glow following cursor */}
         <div
