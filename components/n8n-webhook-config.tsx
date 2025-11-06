@@ -118,7 +118,7 @@ export function N8NWebhookConfig() {
         </Card>
 
         {/* JSON Example */}
-        <Card className="border border-primary/20 bg-background/50 backdrop-blur-sm p-8">
+        <Card className="neon-card-rotating p-8">
           <h3 className="text-xl font-bold mb-4">Estructura de Datos</h3>
           <div className="bg-background border border-primary/30 p-4 rounded-lg text-sm font-mono overflow-x-auto">
             <pre className="text-primary">{`{
