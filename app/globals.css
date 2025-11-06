@@ -199,13 +199,17 @@
   /* Mejorar neon-card-rotating para que el borde esté siempre visible y se pause en hover */
   .neon-card-rotating {
     position: relative;
-    background: linear-gradient(135deg, oklch(0.12 0 0) 0%, oklch(0.18 0 0) 100%);
+    background: transparent;
     border-radius: var(--radius-lg);
-    overflow: hidden;
+    overflow: visible;
     transition: transform 0.2s ease, box-shadow 0.2s ease;
     cursor: pointer;
-    border: 1.5px solid oklch(0.75 0.15 195 / 0.6);
-    box-shadow: 0 0 15px oklch(0.75 0.15 195 / 0.4), inset 0 0 8px oklch(0.75 0.15 195 / 0.15);
+    box-shadow: 0 0 20px oklch(0.75 0.15 195 / 0.5), inset 0 0 8px oklch(0.75 0.15 195 / 0.15);
+  }
+
+  .neon-card-rotating > * {
+    position: relative;
+    z-index: 2;
   }
 
   .light .neon-card-rotating {
@@ -232,21 +236,24 @@
   .neon-card-rotating::before {
     content: "";
     position: absolute;
-    inset: -3px;
+    inset: -2px;
     background: conic-gradient(
       from var(--angle),
       oklch(0.75 0.15 195) 0deg,
-      oklch(0.85 0.2 200) 30deg,
-      transparent 90deg,
+      oklch(0.85 0.2 200) 20deg,
+      oklch(0.75 0.15 195) 40deg,
+      transparent 60deg,
       transparent 180deg,
-      oklch(0.75 0.15 195) 240deg,
-      oklch(0.85 0.2 200) 270deg,
-      transparent 330deg
+      oklch(0.75 0.15 195) 220deg,
+      oklch(0.85 0.2 200) 240deg,
+      oklch(0.75 0.15 195) 260deg,
+      transparent 280deg
     );
     border-radius: var(--radius-lg);
-    animation: rotate-border 3s linear infinite;
-    z-index: -1;
-    opacity: 0.8;
+    animation: rotate-border 2.5s linear infinite;
+    z-index: 0;
+    opacity: 1;
+    pointer-events: none;
   }
 
   /* Pausar animación del borde en hover */
@@ -260,7 +267,8 @@
     inset: 3px;
     background: linear-gradient(135deg, oklch(0.12 0 0) 0%, oklch(0.18 0 0) 100%);
     border-radius: calc(var(--radius-lg) - 3px);
-    z-index: -1;
+    z-index: 1;
+    pointer-events: none;
   }
 
   .light .neon-card-rotating::after {
@@ -308,11 +316,9 @@
   @keyframes rotate-border {
     0% {
       --angle: 0deg;
-      transform: rotate(0deg);
     }
     100% {
       --angle: 360deg;
-      transform: rotate(360deg);
     }
   }
 

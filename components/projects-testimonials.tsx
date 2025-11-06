@@ -39,7 +39,7 @@ export function ProjectsTestimonials() {
 
           <div className="grid md:grid-cols-3 gap-6">
             {testimonials.map((testimonial, idx) => (
-              <Card key={idx} className="p-8 border-primary/20 hover:border-primary/50 transition-all hover:shadow-lg">
+              <Card key={idx} className="neon-card-rotating p-8">
                 <div className="space-y-4">
                   <Quote className="w-6 h-6 text-primary/50" />
                   <p className="text-foreground text-base leading-relaxed">{testimonial.quote}</p>
