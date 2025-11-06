@@ -309,11 +309,9 @@
   @keyframes rotate-border {
     0% {
       --angle: 0deg;
-      transform: rotate(0deg);
     }
     100% {
       --angle: 360deg;
-      transform: rotate(360deg);
     }
   }
 
