@@ -199,12 +199,17 @@
   /* Mejorar neon-card-rotating para que el borde esté siempre visible y se pause en hover */
   .neon-card-rotating {
     position: relative;
-    background: linear-gradient(135deg, oklch(0.12 0 0) 0%, oklch(0.18 0 0) 100%);
+    background: transparent;
     border-radius: var(--radius-lg);
     overflow: visible;
     transition: transform 0.2s ease, box-shadow 0.2s ease;
     cursor: pointer;
     box-shadow: 0 0 20px oklch(0.75 0.15 195 / 0.5), inset 0 0 8px oklch(0.75 0.15 195 / 0.15);
+  }
+
+  .neon-card-rotating > * {
+    position: relative;
+    z-index: 2;
   }
 
   .light .neon-card-rotating {
