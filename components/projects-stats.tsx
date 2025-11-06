@@ -78,7 +78,7 @@ export function ProjectsStats() {
               return (
                 <Card
                   key={idx}
-                  className="p-4 md:p-6 border-primary/20 hover:border-primary/50 transition-all hover:shadow-lg group"
+                  className="neon-card-rotating p-4 md:p-6 group"
                 >
                   <div className="space-y-4">
                     <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center group-hover:neon-glow transition-all">
@@ -97,7 +97,7 @@ export function ProjectsStats() {
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-8">
             {/* Growth Chart */}
-            <Card className="p-4 md:p-8 border-primary/20 overflow-hidden">
+            <Card className="neon-card-rotating p-4 md:p-8 overflow-hidden">
               <h3 className="text-lg md:text-xl font-bold mb-4 md:mb-6 text-foreground">Crecimiento de Adopción</h3>
               <div className="w-full overflow-x-auto -mx-4 md:mx-0 md:px-0">
                 <div className="w-full min-w-max md:min-w-0 px-4 md:px-0">
@@ -133,7 +133,7 @@ export function ProjectsStats() {
               </div>
             </Card>
 
-            <Card className="p-4 md:p-8 border-primary/20 flex flex-col">
+            <Card className="neon-card-rotating p-4 md:p-8 flex flex-col">
               <h3 className="text-lg md:text-xl font-bold mb-4 md:mb-6 text-foreground">Distribución de Proyectos</h3>
               <div className="flex-1 flex items-center justify-center min-h-64 md:min-h-80">
                 <ResponsiveContainer width="100%" height={280}>
