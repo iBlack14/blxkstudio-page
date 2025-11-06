@@ -22,7 +22,7 @@ export function ProjectDemos() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {/* Demo 1: WhatsApp Payment Gateway */}
           <Card
-            className="group border border-primary/20 bg-background/50 backdrop-blur-sm hover:border-primary/50 transition-all cursor-pointer p-6"
+            className="group neon-card-rotating backdrop-blur-sm cursor-pointer p-6"
             onClick={() => setActiveDemo(activeDemo === "whatsapp" ? null : "whatsapp")}
           >
             <div className="flex items-center gap-3 mb-4">
@@ -55,7 +55,7 @@ export function ProjectDemos() {
 
           {/* Demo 2: N8N Automation */}
           <Card
-            className="group border border-primary/20 bg-background/50 backdrop-blur-sm hover:border-primary/50 transition-all cursor-pointer p-6"
+            className="group neon-card-rotating backdrop-blur-sm cursor-pointer p-6"
             onClick={() => setActiveDemo(activeDemo === "n8n" ? null : "n8n")}
           >
             <div className="flex items-center gap-3 mb-4">
@@ -81,7 +81,7 @@ export function ProjectDemos() {
 
           {/* Demo 3: Order Management */}
           <Card
-            className="group border border-primary/20 bg-background/50 backdrop-blur-sm hover:border-primary/50 transition-all cursor-pointer p-6"
+            className="group neon-card-rotating backdrop-blur-sm cursor-pointer p-6"
             onClick={() => setActiveDemo(activeDemo === "orders" ? null : "orders")}
           >
             <div className="flex items-center gap-3 mb-4">
@@ -112,7 +112,7 @@ export function ProjectDemos() {
 
           {/* Demo 4: Chatbot */}
           <Card
-            className="group border border-primary/20 bg-background/50 backdrop-blur-sm hover:border-primary/50 transition-all cursor-pointer p-6"
+            className="group neon-card-rotating backdrop-blur-sm cursor-pointer p-6"
             onClick={() => setActiveDemo(activeDemo === "chatbot" ? null : "chatbot")}
           >
             <div className="flex items-center gap-3 mb-4">
@@ -139,7 +139,7 @@ export function ProjectDemos() {
 
           {/* Demo 5: Admin Dashboard */}
           <Card
-            className="group border border-primary/20 bg-background/50 backdrop-blur-sm hover:border-primary/50 transition-all cursor-pointer p-6"
+            className="group neon-card-rotating backdrop-blur-sm cursor-pointer p-6"
             onClick={() => setActiveDemo(activeDemo === "admin" ? null : "admin")}
           >
             <div className="flex items-center gap-3 mb-4">
