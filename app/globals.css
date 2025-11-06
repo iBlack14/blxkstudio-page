@@ -201,11 +201,11 @@
     position: relative;
     background: linear-gradient(135deg, oklch(0.12 0 0) 0%, oklch(0.18 0 0) 100%);
     border-radius: var(--radius-lg);
-    overflow: hidden;
+    overflow: visible;
     transition: transform 0.2s ease, box-shadow 0.2s ease;
     cursor: pointer;
-    border: 1.5px solid oklch(0.75 0.15 195 / 0.6);
-    box-shadow: 0 0 15px oklch(0.75 0.15 195 / 0.4), inset 0 0 8px oklch(0.75 0.15 195 / 0.15);
+    border: 2px solid oklch(0.75 0.15 195 / 0.7);
+    box-shadow: 0 0 20px oklch(0.75 0.15 195 / 0.5), inset 0 0 8px oklch(0.75 0.15 195 / 0.15);
   }
 
   .light .neon-card-rotating {
@@ -246,7 +246,7 @@
     border-radius: var(--radius-lg);
     animation: rotate-border 3s linear infinite;
     z-index: -1;
-    opacity: 0.8;
+    opacity: 1;
   }
 
   /* Pausar animación del borde en hover */
