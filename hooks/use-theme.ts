@@ -8,6 +8,18 @@ export function useTheme() {
   const [theme, setTheme] = useState<Theme>("dark")
   const [mounted, setMounted] = useState(false)
 
+  const applyTheme = (newTheme: Theme) => {
+    const html = document.documentElement
+    if (newTheme === "light") {
+      html.classList.remove("dark")
+      html.classList.add("light")
+    } else {
+      html.classList.remove("light")
+      html.classList.add("dark")
+    }
+    localStorage.setItem("theme", newTheme)
+  }
+
   useEffect(() => {
     const getInitialTheme = (): Theme => {
       // Check localStorage first
@@ -25,8 +37,8 @@ export function useTheme() {
     }
 
     const initialTheme = getInitialTheme()
-    setTheme(initialTheme)
     applyTheme(initialTheme)
+    setTheme(initialTheme)
     setMounted(true)
 
     // Check theme every minute to update based on time
