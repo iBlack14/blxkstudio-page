@@ -1,4 +1,5 @@
 "use client";
+/// <reference types="react" />
 
 import React from "react";
 import { Globe, Bot, MessageSquare, Plug, Cloud, Palette } from "lucide-react";
@@ -60,19 +61,21 @@ export function Services3D() {
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {services.map((service, index) => (
-              <Card3DHover key={index} delay={index * 100}>
-                <div className="neon-card-rotating p-6 rounded-lg space-y-4 group h-full">
-                  <div className="w-14 h-14 rounded-lg bg-primary/10 flex items-center justify-center group-hover:neon-glow transition-all duration-300">
-                    <service.icon className="w-7 h-7 text-primary group-hover:scale-110 transition-transform" />
+              <div key={index}>
+                <Card3DHover delay={index * 100}>
+                  <div className="neon-card-rotating p-6 rounded-lg space-y-4 group h-full">
+                    <div className="w-14 h-14 rounded-lg bg-primary/10 flex items-center justify-center group-hover:neon-glow transition-all duration-300">
+                      <service.icon className="w-7 h-7 text-primary group-hover:scale-110 transition-transform" />
+                    </div>
+                    <h3 className="text-xl font-bold text-foreground text-balance group-hover:text-primary transition-colors">
+                      {service.title}
+                    </h3>
+                    <p className="text-sm text-muted-foreground leading-relaxed text-pretty">
+                      {service.description}
+                    </p>
                   </div>
-                  <h3 className="text-xl font-bold text-foreground text-balance group-hover:text-primary transition-colors">
-                    {service.title}
-                  </h3>
-                  <p className="text-sm text-muted-foreground leading-relaxed text-pretty">
-                    {service.description}
-                  </p>
-                </div>
-              </Card3DHover>
+                </Card3DHover>
+              </div>
             ))}
           </div>
         </div>

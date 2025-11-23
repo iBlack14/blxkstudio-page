@@ -1,11 +1,14 @@
-import { FounderHero } from "@/components/founder-hero"
-import { About } from "@/components/about"
-import { Services3D } from "@/components/services-3d"
-import { TechStack } from "@/components/tech-stack"
-import { Portfolio } from "@/components/portfolio"
-import { Contact } from "@/components/contact"
-import { Navigation } from "@/components/navigation"
-import { BlxkChatbot } from "@/components/blxk-chatbot"
+"use client";
+
+import { FounderHero } from "@/components/founder-hero";
+import { About } from "@/components/about";
+import { Services3D } from "@/components/services-3d";
+import { ProductsShowcase } from "@/components/products-showcase";
+import { TechStack } from "@/components/tech-stack";
+import { Portfolio } from "@/components/portfolio";
+import { Contact } from "@/components/contact";
+import { Navigation } from "@/components/navigation";
+import { BlxkChatbot } from "@/components/blxk-chatbot";
 
 export default function Home() {
   return (
@@ -14,10 +17,11 @@ export default function Home() {
       <FounderHero />
       <About />
       <Services3D />
+      <ProductsShowcase />
       <TechStack />
       <Portfolio />
       <Contact />
       <BlxkChatbot />
     </main>
-  )
+  );
 }
