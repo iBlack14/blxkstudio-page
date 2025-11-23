@@ -56,18 +56,18 @@ export function FounderHero() {
         </svg>
         {/* Floating particles */}
         <div className="absolute inset-0">
-          {[...Array(6)].map((_, i) => (
+          {isLoaded && particles.map((particle) => (
             <div
-              key={i}
+              key={particle.id}
               className="absolute w-0.5 h-0.5 bg-primary rounded-full"
               style={{
-                left: `${Math.random() * 100}%`,
-                top: `${Math.random() * 100}%`,
+                left: `${particle.left}%`,
+                top: `${particle.top}%`,
                 animationName: "pulse",
-                animationDuration: `${2 + Math.random() * 2}s`,
+                animationDuration: `${particle.duration}s`,
                 animationTimingFunction: "ease-in-out",
                 animationIterationCount: "infinite",
-                animationDelay: `${i * 0.3}s`,
+                animationDelay: `${particle.delay}s`,
                 opacity: 0.4,
               }}
             />
