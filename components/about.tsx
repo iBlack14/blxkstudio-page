@@ -1,3 +1,4 @@
+/// <reference types="react" />
 import React from "react";
 import { Target, Eye, Lightbulb, Users, TrendingUp, Handshake, Zap } from "lucide-react"
 
