@@ -15,6 +15,7 @@ export default function Home() {
   return (
     <main className="min-h-screen bg-background">
       <Navigation />
+      <FloatingThemeToggle />
       <FounderHero />
       <About />
       <Services3D />
