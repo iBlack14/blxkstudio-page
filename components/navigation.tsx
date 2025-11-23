@@ -10,9 +10,13 @@ export function Navigation() {
   const [isScrolled, setIsScrolled] = useState(false)
   const [activeSection, setActiveSection] = useState("hero")
   const [isFormOpen, setIsFormOpen] = useState(false)
+  const [pathname, setPathname] = useState("/")
   const mobileNavRef = useRef<HTMLDivElement>(null)
   const { theme, toggleTheme, mounted } = useTheme()
-  const pathname = typeof window !== "undefined" ? window.location.pathname : "/"
+
+  useEffect(() => {
+    setPathname(window.location.pathname)
+  }, [])
 
   useEffect(() => {
     if (pathname === "/projects" || pathname === "/portfolio") {
