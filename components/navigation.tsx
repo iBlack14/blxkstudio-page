@@ -125,7 +125,6 @@ export function Navigation() {
                   {item.label}
                 </a>
               ))}
-              <ThemeToggle />
               <Button
                 onClick={() => setIsFormOpen(true)}
                 className="neon-glow bg-primary text-primary-foreground hover:bg-primary/90"
