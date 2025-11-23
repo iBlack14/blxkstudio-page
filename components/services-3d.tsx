@@ -1,56 +1,58 @@
-"use client"
+"use client";
 
-import { Globe, Bot, MessageSquare, Plug, Cloud, Palette } from "lucide-react"
-import { Card3DHover } from "./3d-card-hover"
+import React from "react";
+import { Globe, Bot, MessageSquare, Plug, Cloud, Palette } from "lucide-react";
+import { Card3DHover } from "./3d-card-hover";
 
 export function Services3D() {
   const services = [
     {
       icon: Globe,
-      title: "Desarrollo Web y Software Empresarial",
+      title: "Desarrollo Web y Soluciones Empresariales",
       description:
-        "Diseño y desarrollo de sistemas web, paneles de control, CRMs, ERPs y plataformas escalables a medida para optimizar operaciones empresariales.",
+        "WordPress, Elementor, Next.js, plugins personalizados, sistemas empresariales (inventarios, ventas, facturación) e integraciones con APIs.",
     },
     {
       icon: Bot,
       title: "Automatización e Inteligencia Artificial",
       description:
-        "Flujos inteligentes con n8n, GPT y APIs personalizadas para automatizar atención al cliente, marketing digital y procesos internos críticos.",
+        "Flujos inteligentes con n8n, Gemini/GPT, bots que automatizan atención al cliente, marketing y procesos internos críticos.",
     },
     {
       icon: MessageSquare,
-      title: "Mensajería Masiva y Omnicanal",
+      title: "WhatsApp Business y Chatbots",
       description:
-        "Campañas automatizadas por WhatsApp, Telegram y Email con segmentación avanzada, análisis en tiempo real y control total de audiencias.",
+        "Configuración avanzada de WhatsApp API, chatbots con detección inteligente y sistemas híbridos (bot + humano).",
     },
     {
       icon: Plug,
-      title: "Integraciones y APIs",
+      title: "Infraestructura y DevOps",
       description:
-        "Conexión seamless entre sistemas, pasarelas de pago, CRMs y plataformas externas para crear ecosistemas digitales cohesivos.",
+        "VPS Linux (Azure, EasyPanel, cPanel, WHM), despliegues Node, Next.js, PHP, SSL, Nixpacks y Docker.",
     },
     {
       icon: Cloud,
-      title: "Infraestructura y Soporte Técnico",
+      title: "Hosting & Reseller",
       description:
-        "Despliegue en la nube, seguridad, mantenimiento proactivo y monitoreo 24/7 de infraestructura crítica.",
+        "Planes Emprendedor, Empresa y Premium con cPanel, WHM y SSL.",
     },
     {
       icon: Palette,
-      title: "Diseño y Branding Digital",
+      title: "Productos Digitales",
       description:
-        "Creación de identidad visual, landing pages de alto impacto y materiales para fortalecer tu presencia digital.",
+        "Plantillas profesionales para Elementor, automatizaciones listas, plugins personalizados e integración de pagos (Yape, Plin, Izipay QR).",
     },
-  ]
+  ];
 
   return (
     <section id="services" className="py-24 relative">
       <div className="absolute inset-0 bg-gradient-to-b from-transparent via-primary/5 to-transparent" />
-
       <div className="container mx-auto px-4 relative z-10">
         <div className="max-w-6xl mx-auto space-y-12">
           <div className="text-center space-y-4 animate-in fade-in duration-1000">
-            <h2 className="text-4xl md:text-5xl font-bold neon-text-sm">Servicios Principales</h2>
+            <h2 className="text-4xl md:text-5xl font-bold neon-text-sm">
+              Servicios Principales
+            </h2>
             <p className="text-lg text-muted-foreground max-w-3xl mx-auto leading-relaxed text-pretty">
               Soluciones end-to-end desde la conceptualización hasta la implementación
             </p>
@@ -66,7 +68,9 @@ export function Services3D() {
                   <h3 className="text-xl font-bold text-foreground text-balance group-hover:text-primary transition-colors">
                     {service.title}
                   </h3>
-                  <p className="text-sm text-muted-foreground leading-relaxed text-pretty">{service.description}</p>
+                  <p className="text-sm text-muted-foreground leading-relaxed text-pretty">
+                    {service.description}
+                  </p>
                 </div>
               </Card3DHover>
             ))}
@@ -74,5 +78,5 @@ export function Services3D() {
         </div>
       </div>
     </section>
-  )
+  );
 }

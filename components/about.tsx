@@ -1,3 +1,4 @@
+import React from "react";
 import { Target, Eye, Lightbulb, Users, TrendingUp, Handshake, Zap } from "lucide-react"
 
 export function About() {
@@ -7,7 +8,7 @@ export function About() {
     { icon: TrendingUp, title: "Evolución", description: "Aprendemos, iteramos y mejoramos continuamente" },
     { icon: Users, title: "Colaboración", description: "Trabajamos como aliados estratégicos de nuestros clientes" },
     { icon: Zap, title: "Simplicidad", description: "La tecnología debe ser clara, útil y profundamente humana" },
-  ]
+  ];
 
   return (
     <section id="about" className="py-24 relative">
@@ -17,8 +18,13 @@ export function About() {
           <div className="text-center space-y-4">
             <h2 className="text-4xl md:text-5xl font-bold neon-text-sm">Sobre Nosotros</h2>
             <p className="text-lg text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-              BLXK Studio es una startup tecnológica peruana especializada en desarrollo de software, automatización
-              inteligente y soluciones digitales personalizadas.
+              Soy Alonso, desarrollador autodidacta y emprendedor digital. Lidero <span className="text-primary font-semibold">BLXK Studio</span>, una marca enfocada en software, hosting, automatización y servicios tecnológicos para empresas y emprendedores.
+            </p>
+            <p className="text-lg text-muted-foreground max-w-3xl mx-auto leading-relaxed">
+              Me destaco por mi aprendizaje rápido, organización, visión técnica y creativa, ofreciendo soluciones reales adaptadas a las necesidades de cada cliente.
+            </p>
+            <p className="text-lg text-muted-foreground max-w-3xl mx-auto leading-relaxed">
+              Estudiante de Ingeniería Industrial en la <span className="text-primary font-medium">UTP (Chiclayo)</span> con enfoque en ética, sostenibilidad y tecnología.
             </p>
           </div>
 
@@ -30,8 +36,7 @@ export function About() {
                 <h3 className="text-2xl font-bold text-primary">Misión</h3>
               </div>
               <p className="text-muted-foreground leading-relaxed">
-                Impulsar la transformación digital de empresas y emprendedores mediante soluciones tecnológicas
-                inteligentes, accesibles y de alto impacto.
+                Impulsar la transformación digital de empresas y emprendedores mediante soluciones tecnológicas inteligentes, accesibles y de alto impacto.
               </p>
             </div>
 
@@ -41,8 +46,7 @@ export function About() {
                 <h3 className="text-2xl font-bold text-primary">Visión</h3>
               </div>
               <p className="text-muted-foreground leading-relaxed">
-                Convertirnos en referente de innovación y automatización en Latinoamérica, reconocidos por nuestro
-                compromiso, excelencia técnica y soluciones que generan ventaja competitiva real.
+                Convertirnos en referente de innovación y automatización en Latinoamérica, reconocidos por nuestro compromiso, excelencia técnica y soluciones que generan ventaja competitiva real.
               </p>
             </div>
           </div>
@@ -66,5 +70,5 @@ export function About() {
         </div>
       </div>
     </section>
-  )
+  );
 }
