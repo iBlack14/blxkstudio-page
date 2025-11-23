@@ -173,15 +173,7 @@ export function Navigation() {
               <a href="#hero" className="text-xl font-bold neon-text font-mono flex-1 text-center">
                 BLXK STUDIO
               </a>
-              <button
-                onClick={toggleTheme}
-                className={`p-2 rounded-lg transition-colors flex-shrink-0 ${
-                  theme === "light" ? "text-primary hover:bg-primary/10" : "text-primary hover:bg-primary/20"
-                }`}
-                title={`Cambiar a modo ${theme === "light" ? "oscuro" : "claro"}`}
-              >
-                {theme === "light" ? "🌙" : "☀️"}
-              </button>
+              <ThemeToggle />
             </div>
           </div>
         </>
