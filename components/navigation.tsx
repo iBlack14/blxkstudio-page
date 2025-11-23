@@ -61,7 +61,7 @@ export function Navigation() {
   const navItems = [
     { label: "Inicio", href: "/", icon: Home, id: "hero" },
     { label: "Nosotros", href: "/#about", icon: Info, id: "about" },
-    { label: "Servicios", href: "/#services", icon: Briefcase, id: "services" },
+    { label: "Servicios", href: "/servicios", icon: Briefcase, id: "services" },
     { label: "Stack", href: "/#tech", icon: Code, id: "tech" },
     { label: "Portafolio", href: "/projects", icon: FolderOpen, id: "portfolio" },
     { label: "Contacto", href: "/#contact", icon: Mail, id: "contact" },
