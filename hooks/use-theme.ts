@@ -58,18 +58,6 @@ export function useTheme() {
     return () => clearInterval(interval)
   }, [])
 
-  const applyTheme = (newTheme: Theme) => {
-    const html = document.documentElement
-    if (newTheme === "light") {
-      html.classList.remove("dark")
-      html.classList.add("light")
-    } else {
-      html.classList.remove("light")
-      html.classList.add("dark")
-    }
-    localStorage.setItem("theme", newTheme)
-  }
-
   const toggleTheme = () => {
     const newTheme = theme === "light" ? "dark" : "light"
     setTheme(newTheme)
