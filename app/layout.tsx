@@ -128,6 +128,7 @@ export default function RootLayout({
       </head>
       <body className="font-sans antialiased">
         <ThemeProvider>
+          <CursorDot />
           <Suspense fallback={null}>{children}</Suspense>
         </ThemeProvider>
       </body>
