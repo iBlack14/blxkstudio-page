@@ -18,7 +18,7 @@ export default function Home() {
       <FloatingThemeToggle />
       <FounderHero />
       <About />
-      <Services3D />
+      <ServicesDetailed />
       <ProductsShowcase />
       <TechStack />
       <Portfolio />
