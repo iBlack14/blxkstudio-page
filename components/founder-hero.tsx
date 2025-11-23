@@ -6,9 +6,20 @@ import { ArrowRight, Zap } from "lucide-react"
 export function FounderHero() {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 })
   const [isLoaded, setIsLoaded] = useState(false)
+  const [particles, setParticles] = useState<Array<{ id: number; left: number; top: number; duration: number; delay: number }>>([])
 
   useEffect(() => {
+    // Generate particles only on client
+    const generatedParticles = [...Array(6)].map((_, i) => ({
+      id: i,
+      left: Math.random() * 100,
+      top: Math.random() * 100,
+      duration: 2 + Math.random() * 2,
+      delay: i * 0.3,
+    }))
+    setParticles(generatedParticles)
     setIsLoaded(true)
+
     const handleMouseMove = (e: MouseEvent) => {
       setMousePosition({ x: e.clientX, y: e.clientY })
     }
