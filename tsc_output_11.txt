@@ -1,14 +1,9 @@
-app/api/chat/route.ts(52,7): error TS2353: Object literal may only specify known properties, and 'maxTokens' does not exist in type 'CallSettings & { system?: string | undefined; } & { messages: ModelMessage[]; prompt?: undefined; } & { model: LanguageModel; tools?: ToolSet | undefined; ... 13 more ...; _internal?: { ...; } | undefined; }'.
 app/api/send-email/route.tsx(119,7): error TS2322: Type 'CreateEmailResponse' is not assignable to type '{ data: null; error: null; }'.
   Type '{ error: ErrorResponse; data: null; } & { headers: Record<string, string> | null; }' is not assignable to type '{ data: null; error: null; }'.
     Types of property 'error' are incompatible.
       Type 'ErrorResponse' is not assignable to type 'null'.
-app/api/send-email/route.tsx(240,48): error TS2339: Property 'id' does not exist on type 'never'.
 app/layout.tsx(73,5): error TS2353: Object literal may only specify known properties, and 'bingbot' does not exist in type 'Robots'.
-app/layout.tsx(89,13): error TS2709: Cannot use namespace 'ReactNode' as a type.
-components/3d-card-effect.tsx(8,19): error TS2694: Namespace '"react"' has no exported member 'ReactNode'.
 components/3d-card-effect.tsx(13,19): error TS2347: Untyped function calls may not accept type arguments.
-components/3d-card-hover.tsx(6,13): error TS2709: Cannot use namespace 'ReactNode' as a type.
 components/blxk-chatbot.tsx(22,26): error TS2347: Untyped function calls may not accept type arguments.
 components/blxk-chatbot.tsx(23,11): error TS2339: Property 'isDayMode' does not exist on type '{ theme: any; toggleTheme: () => void; mounted: any; }'.
 components/blxk-chatbot.tsx(33,45): error TS2694: Namespace '"react"' has no exported member 'FormEvent'.
@@ -35,17 +30,7 @@ components/smart-chatbot-handler.tsx(37,18): error TS7006: Parameter 'prev' impl
 components/smart-chatbot-handler.tsx(53,22): error TS7006: Parameter 'prev' implicitly has an 'any' type.
 components/smart-chatbot-handler.tsx(83,18): error TS7006: Parameter 'prev' implicitly has an 'any' type.
 components/smart-chatbot-handler.tsx(146,25): error TS7006: Parameter 'msg' implicitly has an 'any' type.
-components/theme-provider.tsx(7,57): error TS2709: Cannot use namespace 'ReactNode' as a type.
-components/ui/button.tsx(45,10): error TS2694: Namespace '"react"' has no exported member 'ComponentProps'.
-components/ui/card.tsx(5,46): error TS2694: Namespace '"react"' has no exported member 'ComponentProps'.
-components/ui/card.tsx(18,52): error TS2694: Namespace '"react"' has no exported member 'ComponentProps'.
-components/ui/card.tsx(31,51): error TS2694: Namespace '"react"' has no exported member 'ComponentProps'.
-components/ui/card.tsx(41,57): error TS2694: Namespace '"react"' has no exported member 'ComponentProps'.
-components/ui/card.tsx(51,52): error TS2694: Namespace '"react"' has no exported member 'ComponentProps'.
-components/ui/card.tsx(64,53): error TS2694: Namespace '"react"' has no exported member 'ComponentProps'.
-components/ui/card.tsx(74,52): error TS2694: Namespace '"react"' has no exported member 'ComponentProps'.
-components/ui/input.tsx(5,53): error TS2694: Namespace '"react"' has no exported member 'ComponentProps'.
-components/ui/textarea.tsx(5,50): error TS2694: Namespace '"react"' has no exported member 'ComponentProps'.
+components/ui/button.tsx(40,17): error TS2724: '"react"' has no exported member named 'ButtonHTMLAttributes'. Did you mean 'HTMLAttributes'?
 hooks/use-chat-history.ts(15,35): error TS2347: Untyped function calls may not accept type arguments.
 hooks/use-chat-history.ts(55,18): error TS7006: Parameter 'prev' implicitly has an 'any' type.
 hooks/use-theme.ts(8,29): error TS2347: Untyped function calls may not accept type arguments.

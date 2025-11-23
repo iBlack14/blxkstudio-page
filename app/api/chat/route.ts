@@ -45,11 +45,10 @@ export async function POST(request: Request) {
 Proporciona respuestas útiles, profesionales y amigables sobre nuestros servicios. Si el usuario pregunta algo fuera de tu ámbito, sugiere que se comunique directamente con el equipo.`
 
     const { text } = await generateText({
-      model: "openai/gpt-4o-mini",
+      model: "openai/gpt-4o-mini" as any,
       system: systemPrompt,
       messages: [...conversationHistory, { role: "user", content: message }],
       temperature: 0.7,
-      maxTokens: 500,
     })
 
     return Response.json({

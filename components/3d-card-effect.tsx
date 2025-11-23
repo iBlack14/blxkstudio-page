@@ -5,7 +5,7 @@
 import * as React from "react"
 
 interface CardEffectProps {
-  children: React.ReactNode
+  children: any
   className?: string
 }
 

@@ -2,7 +2,7 @@
 import type { Metadata } from "next"
 import { Geist } from "next/font/google"
 import { Geist_Mono } from "next/font/google"
-import { Suspense, type PropsWithChildren } from "react"
+import { Suspense } from "react"
 import "./globals.css"
 import { ThemeProvider } from "@/components/theme-provider"
 
@@ -85,7 +85,9 @@ export const metadata: Metadata = {
 
 export default function RootLayout({
   children,
-}: Readonly<PropsWithChildren>) {
+}: Readonly<{
+  children: any
+}>) {
   return (
     <html lang="es" className={`${geistSans.variable} ${geistMono.variable} scroll-smooth`}>
       <head>

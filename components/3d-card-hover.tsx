@@ -3,7 +3,7 @@
 import { ReactNode } from "react"
 
 interface Card3DHoverProps {
-  children: ReactNode
+  children: any
   className?: string
   delay?: number
 }

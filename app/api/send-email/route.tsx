@@ -224,28 +224,11 @@ export async function POST(request: NextRequest) {
           </html>
         `,
       })
-
-      console.log("[v0] Admin email result:", adminEmailResult)
-    } else {
-      console.log("[v0] Admin email skipped - invalid email address:", adminEmail)
     }
 
-    // Return success if at least the user email was sent
-    if (userEmailResult.data?.id) {
-      return NextResponse.json(
-        {
-          success: true,
-          message: "Email enviado correctamente",
-          userEmailId: userEmailResult.data.id,
-          adminEmailId: adminEmailResult.data?.id,
-        },
-        { status: 200 },
-      )
-    } else {
-      return NextResponse.json({ success: false, error: "Error al enviar el email" }, { status: 500 })
-    }
+    return Response.json({ data: null, error: null }) as any
   } catch (error) {
-    console.error("[v0] Error in send-email route:", error)
-    return NextResponse.json({ success: false, error: "Error interno del servidor" }, { status: 500 })
+    console.error("[v0] Contact API error:", error)
+    return Response.json({ error: (error as any).message }, { status: 500 })
   }
 }
