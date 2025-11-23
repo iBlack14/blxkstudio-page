@@ -1,6 +1,6 @@
 "use client"
 
-import type React from "react"
+import * as React from "react"
 
 import { useState } from "react"
 import { X, Send, Loader2 } from "lucide-react"
@@ -89,7 +89,7 @@ export function ProjectFormModal({ isOpen, onClose }: ProjectFormModalProps) {
             <circle cx="12" cy="8" r="1.5" />
           </svg>
 
-          {particles.map((particle) => (
+          {particles.map((particle: any) => (
             <div
               key={particle.id}
               className="particle"
@@ -139,7 +139,7 @@ export function ProjectFormModal({ isOpen, onClose }: ProjectFormModalProps) {
                 id="name"
                 required
                 value={formData.name}
-                onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+                onChange={(e: any) => setFormData({ ...formData, name: e.target.value })}
                 className="bg-background/50 border-primary/30 focus:border-primary neon-input h-10 sm:h-11 text-sm"
                 placeholder="Juan Pérez"
               />
@@ -154,7 +154,7 @@ export function ProjectFormModal({ isOpen, onClose }: ProjectFormModalProps) {
                 type="email"
                 required
                 value={formData.email}
-                onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+                onChange={(e: any) => setFormData({ ...formData, email: e.target.value })}
                 className="bg-background/50 border-primary/30 focus:border-primary neon-input h-10 sm:h-11 text-sm"
                 placeholder="juan@empresa.com"
               />
@@ -170,7 +170,7 @@ export function ProjectFormModal({ isOpen, onClose }: ProjectFormModalProps) {
                 id="phone"
                 type="tel"
                 value={formData.phone}
-                onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
+                onChange={(e: any) => setFormData({ ...formData, phone: e.target.value })}
                 className="bg-background/50 border-primary/30 focus:border-primary neon-input h-10 sm:h-11 text-sm"
                 placeholder="+51 999 999 999"
               />
@@ -183,7 +183,7 @@ export function ProjectFormModal({ isOpen, onClose }: ProjectFormModalProps) {
               <Input
                 id="company"
                 value={formData.company}
-                onChange={(e) => setFormData({ ...formData, company: e.target.value })}
+                onChange={(e: any) => setFormData({ ...formData, company: e.target.value })}
                 className="bg-background/50 border-primary/30 focus:border-primary neon-input h-10 sm:h-11 text-sm"
                 placeholder="Mi Empresa S.A.C."
               />
@@ -198,7 +198,7 @@ export function ProjectFormModal({ isOpen, onClose }: ProjectFormModalProps) {
               id="message"
               required
               value={formData.message}
-              onChange={(e) => setFormData({ ...formData, message: e.target.value })}
+              onChange={(e: any) => setFormData({ ...formData, message: e.target.value })}
               className="bg-background/50 border-primary/30 focus:border-primary neon-input min-h-[100px] sm:min-h-[120px] resize-none text-sm"
               placeholder="Describe tu proyecto, necesidades y objetivos..."
             />

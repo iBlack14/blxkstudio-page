@@ -70,10 +70,7 @@ export const metadata: Metadata = {
       "max-image-preview": "large",
       "max-video-preview": -1,
     },
-    bingbot: {
-      index: true,
-      follow: true,
-    },
+
   },
   applicationName: "BLXK Studio",
   referrer: "strict-origin-when-cross-origin",

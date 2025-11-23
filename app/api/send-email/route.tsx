@@ -229,6 +229,6 @@ export async function POST(request: NextRequest) {
     return Response.json({ data: null, error: null }) as any
   } catch (error) {
     console.error("[v0] Contact API error:", error)
-    return Response.json({ error: (error as any).message }, { status: 500 })
+    return Response.json({ error: (error as any).message }, { status: 500 }) as any
   }
 }
