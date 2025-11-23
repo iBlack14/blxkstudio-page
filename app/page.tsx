@@ -9,6 +9,7 @@ import { Portfolio } from "@/components/portfolio";
 import { Contact } from "@/components/contact";
 import { Navigation } from "@/components/navigation";
 import { BlxkChatbot } from "@/components/blxk-chatbot";
+import { FloatingThemeToggle } from "@/components/theme-toggle";
 
 export default function Home() {
   return (
