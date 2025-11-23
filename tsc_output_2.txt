@@ -1,0 +1,13 @@
+components/founder-hero.tsx(70,138): error TS1005: '}' expected.
+components/founder-hero.tsx(70,139): error TS1381: Unexpected token. Did you mean `{'}'}` or `&rbrace;`?
+components/founder-hero.tsx(70,140): error TS1382: Unexpected token. Did you mean `{'>'}` or `&gt;`?
+components/founder-hero.tsx(140,164): error TS1005: '}' expected.
+components/founder-hero.tsx(140,165): error TS1381: Unexpected token. Did you mean `{'}'}` or `&rbrace;`?
+components/founder-hero.tsx(140,166): error TS1382: Unexpected token. Did you mean `{'>'}` or `&gt;`?
+components/founder-hero.tsx(197,7): error TS17002: Expected corresponding JSX closing tag for 'section'.
+components/founder-hero.tsx(198,5): error TS1005: ')' expected.
+components/founder-hero.tsx(203,30): error TS1136: Property assignment expected.
+components/founder-hero.tsx(212,7): error TS1109: Expression expected.
+components/founder-hero.tsx(214,6): error TS1161: Unterminated regular expression literal.
+components/founder-hero.tsx(215,3): error TS1128: Declaration or statement expected.
+components/founder-hero.tsx(216,1): error TS1109: Expression expected.
