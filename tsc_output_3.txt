@@ -1,1 +1,0 @@
-components/founder-hero.tsx(216,1): error TS1005: ')' expected.
