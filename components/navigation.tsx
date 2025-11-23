@@ -10,9 +10,13 @@ export function Navigation() {
   const [isScrolled, setIsScrolled] = useState(false)
   const [activeSection, setActiveSection] = useState("hero")
   const [isFormOpen, setIsFormOpen] = useState(false)
+  const [pathname, setPathname] = useState("/")
   const mobileNavRef = useRef<HTMLDivElement>(null)
   const { theme, toggleTheme, mounted } = useTheme()
-  const pathname = typeof window !== "undefined" ? window.location.pathname : "/"
+
+  useEffect(() => {
+    setPathname(window.location.pathname)
+  }, [])
 
   useEffect(() => {
     if (pathname === "/projects" || pathname === "/portfolio") {
@@ -141,50 +145,54 @@ export function Navigation() {
         </div>
       </nav>
 
-      <nav className="md:hidden fixed bottom-0 left-0 right-0 z-50 bg-background/95 backdrop-blur-md border-t border-primary/30 shadow-[0_-4px_20px_rgba(0,255,255,0.2)]">
-        <div
-          ref={mobileNavRef}
-          className="flex items-center gap-2 px-2 py-3 overflow-x-auto scrollbar-hide"
-          style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
-        >
-          {infiniteNavItems.map((item, index) => {
-            const Icon = item.icon
-            const isActive = activeSection === item.id
-            return (
-              <a
-                key={`${item.href}-${index}`}
-                href={item.href}
-                data-section={item.id}
-                className={`flex flex-col items-center gap-1 transition-all duration-300 px-4 py-2 rounded-lg flex-shrink-0 ${
-                  isActive
-                    ? "text-primary neon-text-sm scale-110 bg-primary/10 neon-border"
-                    : "text-muted-foreground hover:text-primary active:scale-95"
-                }`}
-              >
-                <Icon size={20} className="stroke-current" />
-                <span className="text-[10px] font-medium whitespace-nowrap">{item.label}</span>
-              </a>
-            )
-          })}
-        </div>
-      </nav>
+      {mounted && (
+        <>
+          <nav className="md:hidden fixed bottom-0 left-0 right-0 z-50 bg-background/95 backdrop-blur-md border-t border-primary/30 shadow-[0_-4px_20px_rgba(0,255,255,0.2)]">
+            <div
+              ref={mobileNavRef}
+              className="flex items-center gap-2 px-2 py-3 overflow-x-auto scrollbar-hide"
+              style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
+            >
+              {infiniteNavItems.map((item, index) => {
+                const Icon = item.icon
+                const isActive = activeSection === item.id
+                return (
+                  <a
+                    key={`${item.href}-${index}`}
+                    href={item.href}
+                    data-section={item.id}
+                    className={`flex flex-col items-center gap-1 transition-all duration-300 px-4 py-2 rounded-lg flex-shrink-0 ${
+                      isActive
+                        ? "text-primary neon-text-sm scale-110 bg-primary/10 neon-border"
+                        : "text-muted-foreground hover:text-primary active:scale-95"
+                    }`}
+                  >
+                    <Icon size={20} className="stroke-current" />
+                    <span className="text-[10px] font-medium whitespace-nowrap">{item.label}</span>
+                  </a>
+                )
+              })}
+            </div>
+          </nav>
 
-      <div className="md:hidden fixed top-0 left-0 right-0 z-50 bg-background/95 backdrop-blur-md border-b border-primary/30">
-        <div className="container mx-auto px-4 py-3 flex items-center justify-between">
-          <a href="#hero" className="text-xl font-bold neon-text font-mono flex-1 text-center">
-            BLXK STUDIO
-          </a>
-          <button
-            onClick={toggleTheme}
-            className={`p-2 rounded-lg transition-colors flex-shrink-0 ${
-              theme === "light" ? "text-primary hover:bg-primary/10" : "text-primary hover:bg-primary/20"
-            }`}
-            title={`Cambiar a modo ${theme === "light" ? "oscuro" : "claro"}`}
-          >
-            {mounted && (theme === "light" ? "🌙" : "☀️")}
-          </button>
-        </div>
-      </div>
+          <div className="md:hidden fixed top-0 left-0 right-0 z-50 bg-background/95 backdrop-blur-md border-b border-primary/30">
+            <div className="container mx-auto px-4 py-3 flex items-center justify-between">
+              <a href="#hero" className="text-xl font-bold neon-text font-mono flex-1 text-center">
+                BLXK STUDIO
+              </a>
+              <button
+                onClick={toggleTheme}
+                className={`p-2 rounded-lg transition-colors flex-shrink-0 ${
+                  theme === "light" ? "text-primary hover:bg-primary/10" : "text-primary hover:bg-primary/20"
+                }`}
+                title={`Cambiar a modo ${theme === "light" ? "oscuro" : "claro"}`}
+              >
+                {theme === "light" ? "🌙" : "☀️"}
+              </button>
+            </div>
+          </div>
+        </>
+      )}
 
       <ProjectFormModal isOpen={isFormOpen} onClose={() => setIsFormOpen(false)} />
 
