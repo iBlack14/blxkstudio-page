@@ -2,7 +2,7 @@
 
 import { FounderHero } from "@/components/founder-hero";
 import { About } from "@/components/about";
-import { Services3D } from "@/components/services-3d";
+import { ServicesDetailed } from "@/components/services-detailed";
 import { ProductsShowcase } from "@/components/products-showcase";
 import { TechStack } from "@/components/tech-stack";
 import { Portfolio } from "@/components/portfolio";
