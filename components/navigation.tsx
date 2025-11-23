@@ -4,7 +4,6 @@ import { useState, useEffect, useRef } from "react"
 import { Button } from "@/components/ui/button"
 import { Home, Info, Briefcase, Code, FolderOpen, Mail } from "lucide-react"
 import { ProjectFormModal } from "./project-form-modal"
-import { ThemeToggle } from "./theme-toggle"
 import { useTheme } from "@/hooks/use-theme"
 
 export function Navigation() {
