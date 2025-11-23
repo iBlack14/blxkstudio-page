@@ -1,10 +1,10 @@
-
 import type { Metadata } from "next"
 import { Geist } from "next/font/google"
 import { Geist_Mono } from "next/font/google"
 import { Suspense } from "react"
 import "./globals.css"
 import { ThemeProvider } from "@/components/theme-provider"
+import { CursorDot } from "@/components/cursor-dot"
 
 const geistSans = Geist({
   subsets: ["latin"],
@@ -128,6 +128,7 @@ export default function RootLayout({
       </head>
       <body className="font-sans antialiased">
         <ThemeProvider>
+          <CursorDot />
           <Suspense fallback={null}>{children}</Suspense>
         </ThemeProvider>
       </body>

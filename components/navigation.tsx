@@ -61,7 +61,7 @@ export function Navigation() {
   const navItems = [
     { label: "Inicio", href: "/", icon: Home, id: "hero" },
     { label: "Nosotros", href: "/#about", icon: Info, id: "about" },
-    { label: "Servicios", href: "/#services", icon: Briefcase, id: "services" },
+    { label: "Servicios", href: "/servicios", icon: Briefcase, id: "services" },
     { label: "Stack", href: "/#tech", icon: Code, id: "tech" },
     { label: "Portafolio", href: "/projects", icon: FolderOpen, id: "portfolio" },
     { label: "Contacto", href: "/#contact", icon: Mail, id: "contact" },
@@ -125,15 +125,6 @@ export function Navigation() {
                   {item.label}
                 </a>
               ))}
-              <button
-                onClick={toggleTheme}
-                className={`p-2 rounded-lg transition-colors ${
-                  theme === "light" ? "text-primary hover:bg-primary/10" : "text-primary hover:bg-primary/20"
-                }`}
-                title={`Cambiar a modo ${theme === "light" ? "oscuro" : "claro"}`}
-              >
-                {mounted && (theme === "light" ? "🌙" : "☀️")}
-              </button>
               <Button
                 onClick={() => setIsFormOpen(true)}
                 className="neon-glow bg-primary text-primary-foreground hover:bg-primary/90"
@@ -176,19 +167,10 @@ export function Navigation() {
           </nav>
 
           <div className="md:hidden fixed top-0 left-0 right-0 z-50 bg-background/95 backdrop-blur-md border-b border-primary/30">
-            <div className="container mx-auto px-4 py-3 flex items-center justify-between">
-              <a href="#hero" className="text-xl font-bold neon-text font-mono flex-1 text-center">
+            <div className="container mx-auto px-4 py-3 flex items-center justify-center">
+              <a href="#hero" className="text-xl font-bold neon-text font-mono text-center">
                 BLXK STUDIO
               </a>
-              <button
-                onClick={toggleTheme}
-                className={`p-2 rounded-lg transition-colors flex-shrink-0 ${
-                  theme === "light" ? "text-primary hover:bg-primary/10" : "text-primary hover:bg-primary/20"
-                }`}
-                title={`Cambiar a modo ${theme === "light" ? "oscuro" : "claro"}`}
-              >
-                {theme === "light" ? "🌙" : "☀️"}
-              </button>
             </div>
           </div>
         </>
