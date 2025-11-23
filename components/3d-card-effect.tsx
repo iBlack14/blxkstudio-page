@@ -1,8 +1,8 @@
 "use client"
 
-import type React from "react"
 
-import { useEffect, useRef, useState } from "react"
+
+import * as React from "react"
 
 interface CardEffectProps {
   children: React.ReactNode
@@ -10,11 +10,11 @@ interface CardEffectProps {
 }
 
 export function Card3DEffect({ children, className = "" }: CardEffectProps) {
-  const cardRef = useRef<HTMLDivElement>(null)
-  const [rotation, setRotation] = useState({ x: 0, y: 0 })
-  const [shine, setShine] = useState({ x: 0, y: 0 })
+  const cardRef = React.useRef<HTMLDivElement>(null)
+  const [rotation, setRotation] = React.useState({ x: 0, y: 0 })
+  const [shine, setShine] = React.useState({ x: 0, y: 0 })
 
-  useEffect(() => {
+  React.useEffect(() => {
     const card = cardRef.current
     if (!card) return
 

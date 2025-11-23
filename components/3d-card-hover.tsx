@@ -1,6 +1,6 @@
 "use client"
 
-import type { ReactNode } from "react"
+import { ReactNode } from "react"
 
 interface Card3DHoverProps {
   children: ReactNode
