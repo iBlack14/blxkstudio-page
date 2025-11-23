@@ -126,15 +126,7 @@ export function Navigation() {
                   {item.label}
                 </a>
               ))}
-              <button
-                onClick={toggleTheme}
-                className={`p-2 rounded-lg transition-colors ${
-                  theme === "light" ? "text-primary hover:bg-primary/10" : "text-primary hover:bg-primary/20"
-                }`}
-                title={`Cambiar a modo ${theme === "light" ? "oscuro" : "claro"}`}
-              >
-                {mounted && (theme === "light" ? "🌙" : "☀️")}
-              </button>
+              <ThemeToggle />
               <Button
                 onClick={() => setIsFormOpen(true)}
                 className="neon-glow bg-primary text-primary-foreground hover:bg-primary/90"
