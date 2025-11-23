@@ -129,6 +129,7 @@
 @layer base {
   * {
     @apply border-border outline-ring/50;
+    cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><circle cx="6" cy="6" r="4" fill="%2382bb3f" opacity="0.8"/><path d="M6 2 L6 10 M2 6 L10 6" stroke="%2382bb3f" stroke-width="1.5" opacity="0.6"/></svg>') 6 6, auto;
   }
 
   body {
