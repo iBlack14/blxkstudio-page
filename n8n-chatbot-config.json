@@ -1,0 +1,368 @@
+{
+  "name": "BLXK Studio - Chatbot Inteligente con Control Manual",
+  "nodes": [
+    {
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "chatbot-webhook",
+        "responseMode": "responseNode",
+        "authentication": "none",
+        "options": {}
+      },
+      "name": "Webhook Entrada",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 1,
+      "position": [100, 300]
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "6e0e2d8c-1d8e-4e5c-8f3a-9b2c1d0e5f7g",
+              "name": "event",
+              "value": "={{ $json.event }}",
+              "type": "string"
+            },
+            {
+              "id": "7f1f3e9d-2e9f-5f6d-9g4b-0c3d2e1f6g8h",
+              "name": "conversationId",
+              "value": "={{ $json.conversationId }}",
+              "type": "string"
+            },
+            {
+              "id": "8g2g4f0e-3f0g-6g7e-0h5c-1d4e3f2g7h9i",
+              "name": "userId",
+              "value": "={{ $json.userId }}",
+              "type": "string"
+            },
+            {
+              "id": "9h3h5g1f-4g1h-7h8f-1i6d-2e5f4g3h8i0j",
+              "name": "message",
+              "value": "={{ $json.message }}",
+              "type": "string"
+            }
+          ]
+        }
+      },
+      "name": "Extraer Variables",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.2,
+      "position": [300, 300]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "conditions": [
+            {
+              "id": "0i4i6h2g-5h2i-8i9g-2j7e-3f6g5h4i9j1k",
+              "operator": {
+                "name": "filter.operator.equals",
+                "type": "string",
+                "value": "equals"
+              },
+              "type": "string",
+              "value": "user_message",
+              "rightValue": "={{ $json.event }}"
+            }
+          ],
+          "options": {
+            "nodeOutputType": "required",
+            "ignoreCase": true
+          }
+        }
+      },
+      "name": "Es Mensaje de Usuario?",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2,
+      "position": [500, 200]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "conditions": [
+            {
+              "id": "1j5j7i3h-6i3j-9j0h-3k8f-4g7h6i5j0k2l",
+              "operator": {
+                "name": "filter.operator.equals",
+                "type": "string",
+                "value": "equals"
+              },
+              "type": "string",
+              "value": "owner_response",
+              "rightValue": "={{ $json.event }}"
+            }
+          ],
+          "options": {
+            "nodeOutputType": "required",
+            "ignoreCase": true
+          }
+        }
+      },
+      "name": "Es Respuesta Owner?",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2,
+      "position": [500, 400]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "conditions": [
+            {
+              "id": "2k6k8j4i-7j4k-0k1i-4l9g-5h8i7j6k1l3m",
+              "operator": {
+                "name": "filter.operator.equals",
+                "type": "string",
+                "value": "equals"
+              },
+              "type": "string",
+              "value": "timeout",
+              "rightValue": "={{ $json.event }}"
+            }
+          ],
+          "options": {
+            "nodeOutputType": "required",
+            "ignoreCase": true
+          }
+        }
+      },
+      "name": "Es Timeout?",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2,
+      "position": [500, 600]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "{{ $env.NEXT_PUBLIC_APP_URL }}/api/chatbot-webhook",
+        "authentication": "none",
+        "sendBody": true,
+        "bodyParameters": {
+          "parameters": [
+            {
+              "name": "event",
+              "value": "user_message"
+            },
+            {
+              "name": "userId",
+              "value": "={{ $json.userId }}"
+            },
+            {
+              "name": "message",
+              "value": "={{ $json.message }}"
+            },
+            {
+              "name": "conversationId",
+              "value": "={{ $json.conversationId }}"
+            },
+            {
+              "name": "timestamp",
+              "value": "={{ new Date().toISOString() }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "name": "Procesar Mensaje Usuario",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.1,
+      "position": [700, 150]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "{{ $env.NEXT_PUBLIC_APP_URL }}/api/chatbot-webhook",
+        "authentication": "none",
+        "sendBody": true,
+        "bodyParameters": {
+          "parameters": [
+            {
+              "name": "event",
+              "value": "owner_response"
+            },
+            {
+              "name": "userId",
+              "value": "={{ $json.userId }}"
+            },
+            {
+              "name": "message",
+              "value": "={{ $json.message }}"
+            },
+            {
+              "name": "conversationId",
+              "value": "={{ $json.conversationId }}"
+            },
+            {
+              "name": "timestamp",
+              "value": "={{ new Date().toISOString() }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "name": "Procesar Respuesta Owner",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.1,
+      "position": [700, 350]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "{{ $env.NEXT_PUBLIC_APP_URL }}/api/chatbot-webhook",
+        "authentication": "none",
+        "sendBody": true,
+        "bodyParameters": {
+          "parameters": [
+            {
+              "name": "event",
+              "value": "timeout"
+            },
+            {
+              "name": "conversationId",
+              "value": "={{ $json.conversationId }}"
+            },
+            {
+              "name": "timestamp",
+              "value": "={{ new Date().toISOString() }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "name": "Procesar Timeout",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.1,
+      "position": [700, 550]
+    },
+    {
+      "parameters": {
+        "waitTime": 120,
+        "unit": "seconds"
+      },
+      "name": "Esperar 2 minutos",
+      "type": "n8n-nodes-base.wait",
+      "typeVersion": 1.1,
+      "position": [900, 400]
+    },
+    {
+      "parameters": {
+        "respondWith": "allData"
+      },
+      "name": "Webhook Salida",
+      "type": "n8n-nodes-base.respondToWebhook",
+      "typeVersion": 1,
+      "position": [1100, 300]
+    }
+  ],
+  "connections": {
+    "Webhook Entrada": {
+      "main": [
+        [
+          {
+            "node": "Extraer Variables",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Extraer Variables": {
+      "main": [
+        [
+          {
+            "node": "Es Mensaje de Usuario?",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Es Respuesta Owner?",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Es Timeout?",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Es Mensaje de Usuario?": {
+      "main": [
+        [
+          {
+            "node": "Procesar Mensaje Usuario",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Es Respuesta Owner?": {
+      "main": [
+        [
+          {
+            "node": "Procesar Respuesta Owner",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Es Timeout?": {
+      "main": [
+        [
+          {
+            "node": "Procesar Timeout",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Procesar Mensaje Usuario": {
+      "main": [
+        [
+          {
+            "node": "Webhook Salida",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Procesar Respuesta Owner": {
+      "main": [
+        [
+          {
+            "node": "Esperar 2 minutos",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Procesar Timeout": {
+      "main": [
+        [
+          {
+            "node": "Webhook Salida",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Esperar 2 minutos": {
+      "main": [
+        [
+          {
+            "node": "Webhook Salida",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  }
+}

@@ -1,0 +1,18 @@
+# BLXK Studio robots.txt for SEO optimization
+User-agent: *
+Allow: /
+Disallow: /admin
+Disallow: /private
+Disallow: /*.json$
+Crawl-delay: 1
+Request-rate: 1/1s
+
+User-agent: Googlebot
+Allow: /
+Crawl-delay: 0
+
+User-agent: Bingbot
+Allow: /
+Crawl-delay: 1
+
+Sitemap: https://blxkstudio.com/sitemap.xml
