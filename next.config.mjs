@@ -7,7 +7,26 @@ const nextConfig = {
     ignoreBuildErrors: true,
   },
   images: {
-    unoptimized: true,
+    unoptimized: false,
+    formats: ['image/avif', 'image/webp'],
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: '**',
+      },
+    ],
+  },
+  compress: true,
+  swcMinify: true,
+  productionBrowserSourceMaps: false,
+  poweredByHeader: false,
+  reactStrictMode: true,
+  onDemandEntries: {
+    maxInactiveAge: 60000,
+    pagesBufferLength: 2,
+  },
+  experimental: {
+    optimizePackageImports: ['lucide-react', '@radix-ui/react-icons'],
   },
 }
 
