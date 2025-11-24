@@ -60,15 +60,15 @@ export default function ServicesPage() {
       </section>
 
       {/* Features comparison section */}
-      <section className="py-20 relative bg-gradient-to-b from-transparent via-primary/5 to-transparent">
+      <section className="py-12 md:py-20 relative bg-gradient-to-b from-transparent via-primary/5 to-transparent">
         <div className="container mx-auto px-4">
-          <div className="max-w-3xl mx-auto text-center space-y-8">
-            <div className="space-y-4">
-              <h2 className="text-4xl font-bold neon-text-sm">¿Por qué elegir BLXK?</h2>
-              <p className="text-lg text-muted-foreground">Cada solución está diseñada para maximizar tu ROI</p>
+          <div className="max-w-3xl mx-auto text-center space-y-6 md:space-y-8">
+            <div className="space-y-2 md:space-y-4">
+              <h2 className="text-2xl md:text-4xl font-bold neon-text-sm">¿Por qué elegir BLXK?</h2>
+              <p className="text-sm md:text-lg text-muted-foreground">Cada solución está diseñada para maximizar tu ROI</p>
             </div>
 
-            <div className="grid md:grid-cols-2 gap-6 mt-12">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 mt-8 md:mt-12">
               {[
                 { icon: "⚡", title: "Performance", desc: "Velocidad y optimización garantizada" },
                 { icon: "🎯", title: "Conversión", desc: "Diseñado para vender desde el día 1" },
@@ -77,10 +77,10 @@ export default function ServicesPage() {
                 { icon: "🤝", title: "Soporte", desc: "Equipo dedicado siempre disponible" },
                 { icon: "🎨", title: "Diseño", desc: "UI/UX premium y personalizado" },
               ].map((item, idx) => (
-                <div key={idx} className="space-y-3 p-6 rounded-lg border border-primary/20 bg-primary/5">
-                  <div className="text-4xl">{item.icon}</div>
-                  <h4 className="text-lg font-bold text-foreground">{item.title}</h4>
-                  <p className="text-sm text-muted-foreground">{item.desc}</p>
+                <div key={idx} className="space-y-2 md:space-y-3 p-4 md:p-6 rounded-lg border border-primary/20 bg-primary/5">
+                  <div className="text-3xl md:text-4xl">{item.icon}</div>
+                  <h4 className="text-base md:text-lg font-bold text-foreground">{item.title}</h4>
+                  <p className="text-xs md:text-sm text-muted-foreground">{item.desc}</p>
                 </div>
               ))}
             </div>
