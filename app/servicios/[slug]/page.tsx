@@ -65,29 +65,29 @@ export default function ServiceDetailPage({ params }: { params: { slug: string }
       </section>
 
       {/* Features and Benefits */}
-      <section className="py-16 relative bg-gradient-to-b from-transparent via-primary/5 to-transparent">
+      <section className="py-12 md:py-16 relative bg-gradient-to-b from-transparent via-primary/5 to-transparent">
         <div className="container mx-auto px-4">
-          <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-12">
+          <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-6 md:gap-12">
             {/* Features */}
-            <div className="space-y-6">
-              <h2 className="text-3xl font-bold text-foreground">✨ Características Premium</h2>
-              <div className="space-y-3">
+            <div className="space-y-4 md:space-y-6">
+              <h2 className="text-xl md:text-3xl font-bold text-foreground">✨ Características Premium</h2>
+              <div className="space-y-2 md:space-y-3">
                 {service.features.map((feature, idx) => (
                   <div key={idx} className="flex items-start gap-3">
                     <Check className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
-                    <span className="text-foreground">{feature}</span>
+                    <span className="text-xs md:text-base text-foreground">{feature}</span>
                   </div>
                 ))}
               </div>
             </div>
 
             {/* Benefits */}
-            <div className="space-y-6">
-              <h2 className="text-3xl font-bold text-foreground">⭐ Beneficios Clave</h2>
-              <div className="space-y-3">
+            <div className="space-y-4 md:space-y-6">
+              <h2 className="text-xl md:text-3xl font-bold text-foreground">⭐ Beneficios Clave</h2>
+              <div className="space-y-2 md:space-y-3">
                 {service.benefits.map((benefit, idx) => (
-                  <div key={idx} className="neon-card p-4 rounded-lg space-y-2">
-                    <p className="font-semibold text-foreground">{benefit}</p>
+                  <div key={idx} className="neon-card p-3 md:p-4 rounded-lg space-y-2">
+                    <p className="text-xs md:text-base font-semibold text-foreground">{benefit}</p>
                   </div>
                 ))}
               </div>
