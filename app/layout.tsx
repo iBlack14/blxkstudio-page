@@ -131,6 +131,7 @@ export default function RootLayout({
         <ThemeProvider>
           <CursorDot />
           <Suspense fallback={null}>{children}</Suspense>
+          <SpeedInsights />
         </ThemeProvider>
       </body>
     </html>
