@@ -29,26 +29,34 @@ export function Navigation() {
   }, [pathname])
 
   useEffect(() => {
+    let scrollTimeout: NodeJS.Timeout | null = null
+
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 50)
 
-      const sections = ["hero", "about", "services", "tech", "portfolio", "contact"]
-      const current = sections.find((section) => {
-        const element = document.getElementById(section)
-        if (element) {
-          const rect = element.getBoundingClientRect()
-          return rect.top <= 150 && rect.bottom >= 150
-        }
-        return false
-      })
+      if (scrollTimeout) clearTimeout(scrollTimeout)
+      scrollTimeout = setTimeout(() => {
+        const sections = ["hero", "about", "services", "tech", "portfolio", "contact"]
+        const current = sections.find((section) => {
+          const element = document.getElementById(section)
+          if (element) {
+            const rect = element.getBoundingClientRect()
+            return rect.top <= 150 && rect.bottom >= 150
+          }
+          return false
+        })
 
-      if (current) {
-        setActiveSection(current)
-      }
+        if (current) {
+          setActiveSection(current)
+        }
+      }, 100)
     }
 
-    window.addEventListener("scroll", handleScroll)
-    return () => window.removeEventListener("scroll", handleScroll)
+    window.addEventListener("scroll", handleScroll, { passive: true })
+    return () => {
+      window.removeEventListener("scroll", handleScroll)
+      if (scrollTimeout) clearTimeout(scrollTimeout)
+    }
   }, [])
 
   useEffect(() => {
