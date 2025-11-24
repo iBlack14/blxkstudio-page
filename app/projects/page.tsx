@@ -1,13 +1,25 @@
 import type { Metadata } from "next"
+import { Suspense } from "react"
+import dynamic from "next/dynamic"
 import { Navigation } from "@/components/navigation"
 import { ProjectsShowcase } from "@/components/projects-showcase"
 import { ProjectsHero } from "@/components/projects-hero"
-import { ProjectsStats } from "@/components/projects-stats"
 import { ProjectsComparison } from "@/components/projects-comparison"
 import { ProjectsTestimonials } from "@/components/projects-testimonials"
-import { Contact } from "@/components/contact"
-import { BlxkChatbot } from "@/components/blxk-chatbot"
 import { ProjectDemos } from "@/components/project-demos"
+
+const ProjectsStats = dynamic(() => import("@/components/projects-stats").then(m => ({ default: m.ProjectsStats })), {
+  loading: () => null,
+  ssr: true,
+})
+const Contact = dynamic(() => import("@/components/contact").then(m => ({ default: m.Contact })), {
+  loading: () => null,
+  ssr: true,
+})
+const BlxkChatbot = dynamic(() => import("@/components/blxk-chatbot").then(m => ({ default: m.BlxkChatbot })), {
+  loading: () => null,
+  ssr: false,
+})
 
 export const metadata: Metadata = {
   title: "Portafolio Premium | BLXK Studio - Proyectos de Desarrollo Full Stack",
