@@ -145,23 +145,23 @@ export default function ServiceDetailPage({ params }: { params: { slug: string }
       )}
 
       {/* CTA Section */}
-      <section className="py-20 relative overflow-hidden">
+      <section className="py-12 md:py-20 relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-r from-primary/10 via-primary/5 to-transparent" />
 
         <div className="container mx-auto px-4 relative z-10">
-          <div className="max-w-3xl mx-auto text-center space-y-8">
-            <div className="space-y-4">
-              <h2 className="text-4xl md:text-5xl font-bold text-foreground">¿Listo para transformar tu negocio?</h2>
-              <p className="text-xl text-muted-foreground">
+          <div className="max-w-3xl mx-auto text-center space-y-6 md:space-y-8">
+            <div className="space-y-3 md:space-y-4">
+              <h2 className="text-2xl md:text-4xl lg:text-5xl font-bold text-foreground">¿Listo para transformar tu negocio?</h2>
+              <p className="text-sm md:text-lg lg:text-xl text-muted-foreground">
                 Hablemos sobre cómo {service.title.toLowerCase()} puede ayudarte a alcanzar tus objetivos
               </p>
             </div>
 
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <button className="px-8 py-4 bg-primary text-primary-foreground rounded-lg font-bold text-lg hover:bg-primary/90 transition-all hover:scale-105 active:scale-95">
+            <div className="flex flex-col sm:flex-row gap-3 md:gap-4 justify-center">
+              <button className="px-6 md:px-8 py-3 md:py-4 bg-primary text-primary-foreground rounded-lg font-bold text-sm md:text-base lg:text-lg hover:bg-primary/90 transition-all hover:scale-105 active:scale-95">
                 {service.cta.primary}
               </button>
-              <button className="px-8 py-4 border border-primary/40 text-primary rounded-lg font-bold text-lg hover:bg-primary/10 transition-all hover:scale-105 active:scale-95">
+              <button className="px-6 md:px-8 py-3 md:py-4 border border-primary/40 text-primary rounded-lg font-bold text-sm md:text-base lg:text-lg hover:bg-primary/10 transition-all hover:scale-105 active:scale-95">
                 {service.cta.secondary}
               </button>
             </div>
