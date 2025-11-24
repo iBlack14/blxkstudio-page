@@ -170,24 +170,24 @@ export default function ServiceDetailPage({ params }: { params: { slug: string }
       </section>
 
       {/* Related Services */}
-      <section className="py-16 relative bg-gradient-to-b from-transparent via-primary/5 to-transparent">
+      <section className="py-12 md:py-16 relative bg-gradient-to-b from-transparent via-primary/5 to-transparent">
         <div className="container mx-auto px-4">
-          <div className="max-w-6xl mx-auto space-y-8">
-            <h2 className="text-3xl font-bold neon-text-sm">Otros servicios que te podrían interesar</h2>
+          <div className="max-w-6xl mx-auto space-y-6 md:space-y-8">
+            <h2 className="text-xl md:text-3xl font-bold neon-text-sm">Otros servicios que te podrían interesar</h2>
 
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
               {servicesData
                 .filter((s) => s.id !== service.id)
                 .slice(0, 3)
                 .map((relatedService) => (
                   <Link key={relatedService.id} href={`/servicios/${relatedService.slug}`}>
-                    <div className="neon-card-rotating p-6 rounded-lg h-full cursor-pointer group">
-                      <div className="text-5xl mb-3">{relatedService.icon}</div>
-                      <h3 className="text-lg font-bold text-foreground mb-2">{relatedService.title}</h3>
-                      <p className="text-sm text-muted-foreground mb-4 line-clamp-2">
+                    <div className="neon-card-rotating p-4 md:p-6 rounded-lg h-full cursor-pointer group">
+                      <div className="text-4xl md:text-5xl mb-2 md:mb-3">{relatedService.icon}</div>
+                      <h3 className="text-base md:text-lg font-bold text-foreground mb-2">{relatedService.title}</h3>
+                      <p className="text-xs md:text-sm text-muted-foreground mb-3 md:mb-4 line-clamp-2">
                         {relatedService.shortDescription}
                       </p>
-                      <p className="text-primary text-sm font-semibold group-hover:translate-x-2 transition-transform">
+                      <p className="text-primary text-xs md:text-sm font-semibold group-hover:translate-x-2 transition-transform">
                         Explorar →
                       </p>
                     </div>
