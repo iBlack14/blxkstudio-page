@@ -11,10 +11,12 @@ export function Navigation() {
   const [activeSection, setActiveSection] = useState("hero")
   const [isFormOpen, setIsFormOpen] = useState(false)
   const [pathname, setPathname] = useState("/")
+  const [mounted, setMounted] = useState(false)
   const mobileNavRef = useRef<HTMLDivElement>(null)
-  const { theme, toggleTheme, mounted } = useTheme()
+  const { theme, toggleTheme } = useTheme()
 
   useEffect(() => {
+    setMounted(true)
     setPathname(window.location.pathname)
   }, [])
 
