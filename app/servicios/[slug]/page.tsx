@@ -38,25 +38,25 @@ export default function ServiceDetailPage({ params }: { params: { slug: string }
       </div>
 
       {/* Hero Section */}
-      <section className="py-20 relative overflow-hidden">
+      <section className="py-12 md:py-20 relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-b from-primary/5 via-transparent to-transparent" />
 
         <div className="container mx-auto px-4 relative z-10">
-          <div className="max-w-4xl mx-auto space-y-8">
+          <div className="max-w-4xl mx-auto space-y-6 md:space-y-8">
             {/* Icon and Title */}
-            <div className="space-y-4">
-              <div className="text-7xl">{service.icon}</div>
-              <h1 className="text-5xl md:text-6xl font-bold neon-text-sm">{service.title}</h1>
-              <p className="text-2xl text-primary font-semibold">{service.subtitle}</p>
-              <p className="text-xl text-muted-foreground leading-relaxed">{service.fullDescription}</p>
+            <div className="space-y-3 md:space-y-4">
+              <div className="text-5xl md:text-7xl">{service.icon}</div>
+              <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold neon-text-sm">{service.title}</h1>
+              <p className="text-lg md:text-2xl text-primary font-semibold">{service.subtitle}</p>
+              <p className="text-sm md:text-lg text-muted-foreground leading-relaxed">{service.fullDescription}</p>
             </div>
 
             {/* Metrics */}
-            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4">
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-4">
               {service.metrics.map((metric, idx) => (
-                <div key={idx} className="neon-card p-4 rounded-lg text-center">
-                  <p className="text-sm text-muted-foreground mb-2">{metric.label}</p>
-                  <p className="text-3xl font-bold text-primary">{metric.value}</p>
+                <div key={idx} className="neon-card p-3 md:p-4 rounded-lg text-center">
+                  <p className="text-xs md:text-sm text-muted-foreground mb-1 md:mb-2">{metric.label}</p>
+                  <p className="text-2xl md:text-3xl font-bold text-primary">{metric.value}</p>
                 </div>
               ))}
             </div>
