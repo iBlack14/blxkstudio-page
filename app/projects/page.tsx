@@ -71,12 +71,18 @@ export default function ProjectsPage() {
       <Navigation />
       <ProjectsHero />
       <ProjectDemos />
-      <ProjectsStats />
+      <Suspense fallback={null}>
+        <ProjectsStats />
+      </Suspense>
       <ProjectsShowcase />
       <ProjectsComparison />
       <ProjectsTestimonials />
-      <Contact />
-      <BlxkChatbot />
+      <Suspense fallback={null}>
+        <Contact />
+      </Suspense>
+      <Suspense fallback={null}>
+        <BlxkChatbot />
+      </Suspense>
     </main>
   )
 }
