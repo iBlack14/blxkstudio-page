@@ -33,6 +33,7 @@ export function FounderHero() {
         {/* Dynamic lightning glow following cursor */}
         <div
           className="absolute w-96 h-96 rounded-full blur-3xl opacity-15"
+          suppressHydrationWarning
           style={{
             background: "radial-gradient(circle, var(--color-primary) 0%, transparent 70%)",
             left: `${mousePosition.x - 192}px`,
