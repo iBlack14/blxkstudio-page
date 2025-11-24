@@ -1,12 +1,14 @@
 "use client"
 
+import { Suspense, lazy } from "react"
 import { servicesData } from "@/lib/services-data"
 import { Navigation } from "@/components/navigation"
 import { FloatingThemeToggle } from "@/components/theme-toggle"
-import { Contact } from "@/components/contact"
-import { BlxkChatbot } from "@/components/blxk-chatbot"
 import Link from "next/link"
 import { ArrowRight } from "lucide-react"
+
+const Contact = lazy(() => import("@/components/contact").then(m => ({ default: m.Contact })))
+const BlxkChatbot = lazy(() => import("@/components/blxk-chatbot").then(m => ({ default: m.BlxkChatbot })))
 
 export default function ServicesPage() {
   return (
