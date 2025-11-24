@@ -15,7 +15,7 @@ export default function ServicesPage() {
       <FloatingThemeToggle />
 
       {/* Hero Section */}
-      <section className="py-20 relative overflow-hidden">
+      <section className="py-12 md:py-20 relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-b from-primary/5 via-transparent to-transparent" />
 
         <div className="container mx-auto px-4 relative z-10">
