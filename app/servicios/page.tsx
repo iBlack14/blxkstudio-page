@@ -7,8 +7,8 @@ import { FloatingThemeToggle } from "@/components/theme-toggle"
 import Link from "next/link"
 import { ArrowRight } from "lucide-react"
 
-const Contact = lazy(() => import("@/components/contact").then(m => ({ default: m.Contact })))
-const BlxkChatbot = lazy(() => import("@/components/blxk-chatbot").then(m => ({ default: m.BlxkChatbot })))
+const Contact = lazy(() => import("@/components/contact").then(m => m.Contact as any))
+const BlxkChatbot = lazy(() => import("@/components/blxk-chatbot").then(m => m.BlxkChatbot as any))
 
 export default function ServicesPage() {
   return (
@@ -77,7 +77,7 @@ export default function ServicesPage() {
                 { icon: "🔒", title: "Seguridad", desc: "Infraestructura enterprise-grade" },
                 { icon: "📈", title: "Escalable", desc: "Crece con tu negocio sin límites" },
                 { icon: "🤝", title: "Soporte", desc: "Equipo dedicado siempre disponible" },
-                { icon: "🎨", title: "Diseño", desc: "UI/UX premium y personalizado" },
+                { icon: "����", title: "Diseño", desc: "UI/UX premium y personalizado" },
               ].map((item, idx) => (
                 <div key={idx} className="space-y-2 md:space-y-3 p-4 md:p-6 rounded-lg border border-primary/20 bg-primary/5">
                   <div className="text-3xl md:text-4xl">{item.icon}</div>
