@@ -101,45 +101,45 @@ export function Navigation() {
 
   return (
     <>
-      {/* Desktop Navigation */}
-      <nav
-        className={`hidden md:block fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-          isScrolled ? "bg-background/95 backdrop-blur-md neon-border" : "bg-transparent"
-        }`}
-      >
-        <div className="container mx-auto px-4 py-4">
-          <div className="flex items-center justify-between">
-            <a href="#hero" className="text-2xl font-bold neon-text font-mono">
-              BLXK STUDIO
-            </a>
-
-            <div className="flex items-center gap-8">
-              {navItems.map((item) => (
-                <a
-                  key={item.href}
-                  href={item.href}
-                  className={`text-sm transition-all duration-300 ${
-                    activeSection === item.id
-                      ? "text-primary neon-text-sm scale-110"
-                      : "text-muted-foreground hover:text-primary"
-                  }`}
-                >
-                  {item.label}
-                </a>
-              ))}
-              <Button
-                onClick={() => setIsFormOpen(true)}
-                className="neon-glow bg-primary text-primary-foreground hover:bg-primary/90"
-              >
-                Iniciar Proyecto
-              </Button>
-            </div>
-          </div>
-        </div>
-      </nav>
-
       {mounted && (
         <>
+          {/* Desktop Navigation */}
+          <nav
+            className={`hidden md:block fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+              isScrolled ? "bg-background/95 backdrop-blur-md neon-border" : "bg-transparent"
+            }`}
+          >
+            <div className="container mx-auto px-4 py-4">
+              <div className="flex items-center justify-between">
+                <a href="#hero" className="text-2xl font-bold neon-text font-mono">
+                  BLXK STUDIO
+                </a>
+
+                <div className="flex items-center gap-8">
+                  {navItems.map((item) => (
+                    <a
+                      key={item.href}
+                      href={item.href}
+                      className={`text-sm transition-all duration-300 ${
+                        activeSection === item.id
+                          ? "text-primary neon-text-sm scale-110"
+                          : "text-muted-foreground hover:text-primary"
+                      }`}
+                    >
+                      {item.label}
+                    </a>
+                  ))}
+                  <Button
+                    onClick={() => setIsFormOpen(true)}
+                    className="neon-glow bg-primary text-primary-foreground hover:bg-primary/90"
+                  >
+                    Iniciar Proyecto
+                  </Button>
+                </div>
+              </div>
+            </div>
+          </nav>
+
           <nav className="md:hidden fixed bottom-0 left-0 right-0 z-50 bg-background/95 backdrop-blur-md border-t border-primary/30 shadow-[0_-4px_20px_rgba(0,255,255,0.2)]">
             <div
               ref={mobileNavRef}
