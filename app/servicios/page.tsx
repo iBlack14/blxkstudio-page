@@ -19,9 +19,9 @@ export default function ServicesPage() {
         <div className="absolute inset-0 bg-gradient-to-b from-primary/5 via-transparent to-transparent" />
 
         <div className="container mx-auto px-4 relative z-10">
-          <div className="max-w-4xl mx-auto text-center space-y-6">
-            <h1 className="text-5xl md:text-6xl font-bold neon-text-sm">Nuestros Servicios</h1>
-            <p className="text-xl text-muted-foreground">
+          <div className="max-w-4xl mx-auto text-center space-y-4 md:space-y-6">
+            <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold neon-text-sm">Nuestros Servicios</h1>
+            <p className="text-base md:text-lg lg:text-xl text-muted-foreground">
               Soluciones integrales para transformar tu negocio con tecnología de punta
             </p>
           </div>
