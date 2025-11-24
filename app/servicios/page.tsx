@@ -97,8 +97,12 @@ export default function ServicesPage() {
         </div>
       </section>
 
-      <Contact />
-      <BlxkChatbot />
+      <Suspense fallback={null}>
+        <Contact />
+      </Suspense>
+      <Suspense fallback={null}>
+        <BlxkChatbot />
+      </Suspense>
     </main>
   )
 }
