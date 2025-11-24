@@ -1,11 +1,14 @@
 "use client"
 
-import { useEffect, useRef } from "react"
+import { useEffect, useRef, useState } from "react"
 
 export function CursorDot() {
   const dotRef = useRef<HTMLDivElement>(null)
+  const [mounted, setMounted] = useState(false)
 
   useEffect(() => {
+    setMounted(true)
+
     const handleMouseMove = (e: MouseEvent) => {
       if (dotRef.current) {
         dotRef.current.style.left = `${e.clientX + 12}px`
@@ -16,6 +19,10 @@ export function CursorDot() {
     window.addEventListener("mousemove", handleMouseMove)
     return () => window.removeEventListener("mousemove", handleMouseMove)
   }, [])
+
+  if (!mounted) {
+    return null
+  }
 
   return (
     <div
