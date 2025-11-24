@@ -97,19 +97,19 @@ export default function ServiceDetailPage({ params }: { params: { slug: string }
       </section>
 
       {/* Use Cases */}
-      <section className="py-16">
+      <section className="py-12 md:py-16">
         <div className="container mx-auto px-4">
-          <div className="max-w-6xl mx-auto space-y-8">
-            <div className="text-center space-y-4">
-              <h2 className="text-4xl font-bold neon-text-sm">Casos de Uso</h2>
-              <p className="text-lg text-muted-foreground">Soluciones para diferentes tipos de negocio</p>
+          <div className="max-w-6xl mx-auto space-y-6 md:space-y-8">
+            <div className="text-center space-y-2 md:space-y-4">
+              <h2 className="text-2xl md:text-4xl font-bold neon-text-sm">Casos de Uso</h2>
+              <p className="text-sm md:text-lg text-muted-foreground">Soluciones para diferentes tipos de negocio</p>
             </div>
 
-            <div className="grid md:grid-cols-2 gap-6">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
               {service.useCases.map((useCase, idx) => (
-                <div key={idx} className="neon-card-rotating p-6 rounded-lg space-y-3">
-                  <h3 className="text-xl font-bold text-foreground">{useCase.title}</h3>
-                  <p className="text-muted-foreground">{useCase.description}</p>
+                <div key={idx} className="neon-card-rotating p-4 md:p-6 rounded-lg space-y-3">
+                  <h3 className="text-lg md:text-xl font-bold text-foreground">{useCase.title}</h3>
+                  <p className="text-xs md:text-base text-muted-foreground">{useCase.description}</p>
                 </div>
               ))}
             </div>
