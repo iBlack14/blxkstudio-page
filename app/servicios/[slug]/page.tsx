@@ -1,13 +1,22 @@
 "use client"
 
+import { Suspense } from "react"
+import dynamic from "next/dynamic"
 import { servicesData } from "@/lib/services-data"
 import { Navigation } from "@/components/navigation"
 import { FloatingThemeToggle } from "@/components/theme-toggle"
-import { Contact } from "@/components/contact"
-import { BlxkChatbot } from "@/components/blxk-chatbot"
 import Link from "next/link"
 import { ArrowLeft, Check } from "lucide-react"
 import { notFound } from "next/navigation"
+
+const Contact = dynamic(() => import("@/components/contact").then(m => ({ default: m.Contact })), {
+  loading: () => null,
+  ssr: false,
+})
+const BlxkChatbot = dynamic(() => import("@/components/blxk-chatbot").then(m => ({ default: m.BlxkChatbot })), {
+  loading: () => null,
+  ssr: false,
+})
 
 export function generateStaticParams() {
   return servicesData.map((service) => ({
