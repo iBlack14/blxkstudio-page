@@ -28,12 +28,7 @@ export function useTheme() {
 
       // Check system preference
       const systemPreference = window.matchMedia("(prefers-color-scheme: light)").matches ? "light" : "dark"
-
-      // Get current hour for time-based detection
-      const hour = new Date().getHours()
-      const isDayTime = hour >= 6 && hour < 18
-
-      return isDayTime ? "light" : "dark"
+      return systemPreference
     }
 
     const initialTheme = getInitialTheme()
