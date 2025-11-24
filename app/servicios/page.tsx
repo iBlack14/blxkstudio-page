@@ -34,21 +34,21 @@ export default function ServicesPage() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 max-w-7xl mx-auto">
             {servicesData.map((service) => (
               <Link key={service.id} href={`/servicios/${service.slug}`}>
-                <div className="neon-card-rotating p-6 rounded-lg h-full cursor-pointer group transition-all hover:scale-105">
+                <div className="neon-card-rotating p-4 md:p-6 rounded-lg h-full cursor-pointer group transition-all hover:scale-105">
                   {/* Icon */}
-                  <div className="text-5xl mb-4">{service.icon}</div>
+                  <div className="text-4xl md:text-5xl mb-3 md:mb-4">{service.icon}</div>
 
                   {/* Title */}
-                  <h3 className="text-2xl font-bold text-foreground mb-2">{service.title}</h3>
+                  <h3 className="text-lg md:text-2xl font-bold text-foreground mb-2">{service.title}</h3>
 
                   {/* Subtitle */}
-                  <p className="text-sm text-primary font-medium mb-4">{service.subtitle}</p>
+                  <p className="text-xs md:text-sm text-primary font-medium mb-3 md:mb-4">{service.subtitle}</p>
 
                   {/* Description */}
-                  <p className="text-sm text-muted-foreground mb-6 line-clamp-3">{service.shortDescription}</p>
+                  <p className="text-xs md:text-sm text-muted-foreground mb-4 md:mb-6 line-clamp-3">{service.shortDescription}</p>
 
                   {/* CTA */}
-                  <div className="flex items-center gap-2 text-primary font-semibold group-hover:translate-x-2 transition-transform">
+                  <div className="flex items-center gap-2 text-primary font-semibold text-sm md:text-base group-hover:translate-x-2 transition-transform">
                     Ver detalles
                     <ArrowRight className="w-4 h-4" />
                   </div>
