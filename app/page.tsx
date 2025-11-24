@@ -3,13 +3,25 @@
 import { Suspense } from "react";
 import dynamic from "next/dynamic";
 import { FounderHero } from "@/components/founder-hero";
-import { About } from "@/components/about";
-import { ServicesDetailed } from "@/components/services-detailed";
-import { ProductsShowcase } from "@/components/products-showcase";
-import { TechStack } from "@/components/tech-stack";
 import { Navigation } from "@/components/navigation";
 import { FloatingThemeToggle } from "@/components/theme-toggle";
 
+const About = dynamic(() => import("@/components/about").then(m => ({ default: m.About })), {
+  loading: () => null,
+  ssr: true,
+})
+const ServicesDetailed = dynamic(() => import("@/components/services-detailed").then(m => ({ default: m.ServicesDetailed })), {
+  loading: () => null,
+  ssr: true,
+})
+const ProductsShowcase = dynamic(() => import("@/components/products-showcase").then(m => ({ default: m.ProductsShowcase })), {
+  loading: () => null,
+  ssr: true,
+})
+const TechStack = dynamic(() => import("@/components/tech-stack").then(m => ({ default: m.TechStack })), {
+  loading: () => null,
+  ssr: true,
+})
 const Portfolio = dynamic(() => import("@/components/portfolio").then(m => ({ default: m.Portfolio })), {
   loading: () => null,
   ssr: true,
