@@ -1,15 +1,27 @@
 "use client";
 
+import { Suspense } from "react";
+import dynamic from "next/dynamic";
 import { FounderHero } from "@/components/founder-hero";
 import { About } from "@/components/about";
 import { ServicesDetailed } from "@/components/services-detailed";
 import { ProductsShowcase } from "@/components/products-showcase";
 import { TechStack } from "@/components/tech-stack";
-import { Portfolio } from "@/components/portfolio";
-import { Contact } from "@/components/contact";
 import { Navigation } from "@/components/navigation";
-import { BlxkChatbot } from "@/components/blxk-chatbot";
 import { FloatingThemeToggle } from "@/components/theme-toggle";
+
+const Portfolio = dynamic(() => import("@/components/portfolio").then(m => ({ default: m.Portfolio })), {
+  loading: () => null,
+  ssr: true,
+})
+const Contact = dynamic(() => import("@/components/contact").then(m => ({ default: m.Contact })), {
+  loading: () => null,
+  ssr: true,
+})
+const BlxkChatbot = dynamic(() => import("@/components/blxk-chatbot").then(m => ({ default: m.BlxkChatbot })), {
+  loading: () => null,
+  ssr: false,
+})
 
 export default function Home() {
   return (
@@ -21,9 +33,15 @@ export default function Home() {
       <ServicesDetailed />
       <ProductsShowcase />
       <TechStack />
-      <Portfolio />
-      <Contact />
-      <BlxkChatbot />
+      <Suspense fallback={null}>
+        <Portfolio />
+      </Suspense>
+      <Suspense fallback={null}>
+        <Contact />
+      </Suspense>
+      <Suspense fallback={null}>
+        <BlxkChatbot />
+      </Suspense>
     </main>
   );
 }
