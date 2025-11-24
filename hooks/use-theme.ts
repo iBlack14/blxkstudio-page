@@ -35,22 +35,6 @@ export function useTheme() {
     applyTheme(initialTheme)
     setTheme(initialTheme)
     setMounted(true)
-
-    // Check theme every minute to update based on time
-    const interval = setInterval(() => {
-      const hour = new Date().getHours()
-      const isDayTime = hour >= 6 && hour < 18
-      const newTheme = isDayTime ? "light" : "dark"
-
-      const savedTheme = localStorage.getItem("theme") as Theme | null
-      // Only auto-update if no saved preference
-      if (!savedTheme && newTheme !== theme) {
-        setTheme(newTheme)
-        applyTheme(newTheme)
-      }
-    }, 60000)
-
-    return () => clearInterval(interval)
   }, [])
 
   const toggleTheme = () => {
