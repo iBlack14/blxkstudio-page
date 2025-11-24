@@ -29,9 +29,9 @@ export default function ServicesPage() {
       </section>
 
       {/* Services Grid */}
-      <section className="py-16 relative">
+      <section className="py-12 md:py-16 relative">
         <div className="container mx-auto px-4">
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-7xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 max-w-7xl mx-auto">
             {servicesData.map((service) => (
               <Link key={service.id} href={`/servicios/${service.slug}`}>
                 <div className="neon-card-rotating p-6 rounded-lg h-full cursor-pointer group transition-all hover:scale-105">
