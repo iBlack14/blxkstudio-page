@@ -1,8 +1,6 @@
 import { Resend } from "resend"
 import { type NextRequest, NextResponse } from "next/server"
 
-const resend = new Resend(process.env.RESEND_API_KEY)
-
 function isValidEmail(email: string | undefined): boolean {
   if (!email) return false
   const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
@@ -10,6 +8,8 @@ function isValidEmail(email: string | undefined): boolean {
 }
 
 export async function POST(request: NextRequest) {
+  const resend = new Resend(process.env.RESEND_API_KEY)
+
   try {
     const { name, email, phone, company, message } = await request.json()
 

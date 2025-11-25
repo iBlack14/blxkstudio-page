@@ -1,5 +1,3 @@
-"use client"
-
 import { Suspense } from "react"
 import dynamic from "next/dynamic"
 import { servicesData } from "@/lib/services-data"
