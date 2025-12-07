@@ -14,7 +14,7 @@ export function About() {
   return (
     <section id="about" className="py-24 relative">
       <div className="container mx-auto px-4">
-        <div className="max-w-6xl mx-auto space-y-16">
+        <div className="max-w-6xl mx-auto space-y-20">
           {/* Header */}
           <div className="text-center space-y-5">
             <h2 className="text-4xl md:text-5xl font-bold neon-text-sm">Sobre Nosotros</h2>
