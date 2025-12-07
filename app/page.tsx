@@ -12,6 +12,10 @@ const ServicesDetailed = dynamic(() => import("@/components/services-detailed").
   loading: () => null,
   ssr: true,
 })
+const ServicesProposal = dynamic(() => import("@/components/services-proposal").then(m => ({ default: m.ServicesProposal })), {
+  loading: () => null,
+  ssr: true,
+})
 const ProductsShowcase = dynamic(() => import("@/components/products-showcase").then(m => ({ default: m.ProductsShowcase })), {
   loading: () => null,
   ssr: true,
