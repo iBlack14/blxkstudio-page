@@ -156,7 +156,7 @@ export function FounderHero() {
               {/* Main image container */}
               <div className="relative aspect-square rounded-2xl overflow-hidden border border-primary/30 bg-gradient-to-br from-card/50 to-card/20 backdrop-blur-xl group">
                 <img
-                  src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=500&h=500&fit=crop"
+                  src="/LOGO-PERFIL.png"
                   alt="Alonso - Fundador BLXK Studio"
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                 />
