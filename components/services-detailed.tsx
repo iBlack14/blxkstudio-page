@@ -274,13 +274,13 @@ export function ServicesDetailed() {
                   {expandedId === service.id && (
                     <div className="pt-4 space-y-4 border-t border-primary/20 animate-in fade-in slide-in-from-top-2 duration-300">
                       {/* Features */}
-                      <div className="space-y-2">
-                        <h4 className="text-sm font-semibold text-primary">✨ Características Premium:</h4>
-                        <div className="grid grid-cols-1 gap-2">
+                      <div className="space-y-3">
+                        <h4 className="text-base font-semibold text-primary">✨ Características Premium:</h4>
+                        <div className="grid grid-cols-1 gap-2.5">
                           {service.features.map((feature, idx) => (
                             <div key={idx} className="flex items-start gap-2">
                               <span className="text-primary text-lg leading-none mt-0.5">•</span>
-                              <span className="text-xs text-muted-foreground">{feature}</span>
+                              <span className="text-sm text-muted-foreground leading-relaxed">{feature}</span>
                             </div>
                           ))}
                         </div>
