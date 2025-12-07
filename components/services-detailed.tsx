@@ -268,7 +268,7 @@ export function ServicesDetailed() {
                     />
                   </div>
 
-                  <p className="text-sm text-muted-foreground">{service.description}</p>
+                  <p className="text-base text-muted-foreground leading-relaxed">{service.description}</p>
 
                   {/* Expandable Content */}
                   {expandedId === service.id && (
