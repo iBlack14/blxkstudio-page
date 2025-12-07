@@ -63,7 +63,7 @@ export function About() {
                 >
                   <value.icon className="w-10 h-10 text-primary" />
                   <h4 className="text-xl font-bold text-foreground">{value.title}</h4>
-                  <p className="text-sm text-muted-foreground leading-relaxed">{value.description}</p>
+                  <p className="text-base text-muted-foreground leading-relaxed">{value.description}</p>
                 </div>
               ))}
             </div>
