@@ -111,9 +111,9 @@ export function FounderHero() {
             </div>
 
             {/* Stack Tecnológico */}
-            <div className="space-y-3">
-              <p className="text-xs font-semibold text-primary uppercase tracking-wider">Stack Tecnológico</p>
-              <div className="flex flex-wrap gap-2">
+            <div className="space-y-4">
+              <p className="text-sm font-semibold text-primary uppercase tracking-wider">Stack Tecnológico</p>
+              <div className="flex flex-wrap gap-3">
                 {[
                   "Next.js",
                   "React",
