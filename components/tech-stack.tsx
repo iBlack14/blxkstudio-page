@@ -57,7 +57,7 @@ export function TechStack() {
         <div className="max-w-6xl mx-auto space-y-12">
           <div className="text-center space-y-4">
             <h2 className="text-4xl md:text-5xl font-bold neon-text-sm">Stack Tecnológico</h2>
-            <p className="text-lg text-muted-foreground">Herramientas de vanguardia para soluciones de clase mundial</p>
+            <p className="text-lg md:text-xl text-muted-foreground leading-loose">Herramientas de vanguardia para soluciones de clase mundial</p>
           </div>
 
           <div className="space-y-12">
