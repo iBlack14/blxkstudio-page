@@ -128,7 +128,7 @@ export function FounderHero() {
                 ].map((tech) => (
                   <span
                     key={tech}
-                    className="px-3 py-1.5 rounded-full text-xs font-medium border border-primary/30 text-primary/70 backdrop-blur-sm hover:border-primary/70 hover:text-primary transition-all duration-300 cursor-default"
+                    className="px-4 py-2 rounded-full text-sm font-medium border border-primary/30 text-primary/80 backdrop-blur-sm hover:border-primary/70 hover:text-primary transition-all duration-300 cursor-default"
                   >
                     {tech}
                   </span>
