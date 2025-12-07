@@ -39,61 +39,61 @@ export function Contact() {
               </p>
             </div>
 
-            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
               {industries.map((industry, index) => (
                 <div
                   key={index}
-                  className="neon-card p-4 rounded-lg flex items-center gap-3 hover:scale-105 transition-all cursor-pointer group"
+                  className="neon-card p-5 rounded-lg flex items-center gap-3 hover:scale-105 transition-all cursor-pointer group"
                 >
                   <div className="w-2 h-2 rounded-full bg-primary neon-glow group-hover:scale-150 transition-transform" />
-                  <span className="text-sm text-foreground">{industry}</span>
+                  <span className="text-base text-foreground">{industry}</span>
                 </div>
               ))}
             </div>
           </div>
 
           {/* Contact Info */}
-          <div className="neon-card-rotating p-12 rounded-lg space-y-8">
+          <div className="neon-card-rotating p-12 rounded-lg space-y-10">
             <div className="text-center space-y-4">
               <h2 className="text-3xl md:text-4xl font-bold neon-text-sm">Contacto</h2>
-              <p className="text-lg text-muted-foreground leading-relaxed">
+              <p className="text-lg md:text-xl text-muted-foreground leading-loose">
                 ¿Listo para transformar tu negocio? Hablemos
               </p>
             </div>
 
-            <div className="grid md:grid-cols-3 gap-8">
-              <div className="flex flex-col items-center text-center space-y-3">
+            <div className="grid md:grid-cols-3 gap-10">
+              <div className="flex flex-col items-center text-center space-y-4">
                 <div className="w-14 h-14 rounded-full bg-primary/10 flex items-center justify-center neon-border hover:neon-glow transition-all">
                   <Mail className="w-6 h-6 text-primary" />
                 </div>
                 <div>
-                  <p className="text-sm text-muted-foreground mb-1">Email</p>
+                  <p className="text-base text-muted-foreground mb-2 font-semibold">Email</p>
                   <a
                     href="mailto:admin@blxkstudio.com"
-                    className="text-foreground hover:text-primary transition-colors hover:neon-text-sm"
+                    className="text-base text-foreground hover:text-primary transition-colors hover:neon-text-sm"
                   >
                     admin@blxkstudio.com
                   </a>
                 </div>
               </div>
 
-              <div className="flex flex-col items-center text-center space-y-3">
+              <div className="flex flex-col items-center text-center space-y-4">
                 <div className="w-14 h-14 rounded-full bg-primary/10 flex items-center justify-center neon-border hover:neon-glow transition-all">
                   <MapPin className="w-6 h-6 text-primary" />
                 </div>
                 <div>
-                  <p className="text-sm text-muted-foreground mb-1">Ubicación</p>
-                  <p className="text-foreground">Lima, Perú 🇵🇪</p>
+                  <p className="text-base text-muted-foreground mb-2 font-semibold">Ubicación</p>
+                  <p className="text-base text-foreground">Lima, Perú 🇵🇪</p>
                 </div>
               </div>
 
-              <div className="flex flex-col items-center text-center space-y-3">
+              <div className="flex flex-col items-center text-center space-y-4">
                 <div className="w-14 h-14 rounded-full bg-primary/10 flex items-center justify-center neon-border hover:neon-glow transition-all">
                   <Building2 className="w-6 h-6 text-primary" />
                 </div>
                 <div>
-                  <p className="text-sm text-muted-foreground mb-1">Especialidades</p>
-                  <p className="text-foreground text-sm">Desarrollo web · Automatización · IA</p>
+                  <p className="text-base text-muted-foreground mb-2 font-semibold">Especialidades</p>
+                  <p className="text-base text-foreground">Desarrollo web · Automatización · IA</p>
                 </div>
               </div>
             </div>
