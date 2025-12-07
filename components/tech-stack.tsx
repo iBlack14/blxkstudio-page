@@ -62,19 +62,19 @@ export function TechStack() {
 
           <div className="space-y-12">
             {techCategories.map((category, index) => (
-              <div key={index} className="space-y-6">
+              <div key={index} className="space-y-8">
                 <h3 className="text-2xl font-bold text-primary text-center">{category.category}</h3>
-                <div className="flex flex-wrap items-center justify-center gap-8">
+                <div className="flex flex-wrap items-center justify-center gap-10">
                   {category.technologies.map((tech, techIndex) => (
-                    <div key={techIndex} className="flex flex-col items-center gap-3 group">
-                      <div className="w-16 h-16 rounded-lg neon-logo-rotating p-3 flex items-center justify-center relative z-10">
+                    <div key={techIndex} className="flex flex-col items-center gap-4 group">
+                      <div className="w-18 h-18 rounded-lg neon-logo-rotating p-3 flex items-center justify-center relative z-10">
                         <img
                           src={tech.logo || "/placeholder.svg"}
                           alt={tech.name}
                           className="w-full h-full object-contain group-hover:scale-110 transition-transform relative z-10"
                         />
                       </div>
-                      <span className="text-sm text-muted-foreground group-hover:text-primary transition-colors">
+                      <span className="text-base text-muted-foreground group-hover:text-primary transition-colors text-center">
                         {tech.name}
                       </span>
                     </div>
