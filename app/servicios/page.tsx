@@ -65,6 +65,9 @@ export default function ServicesPage() {
         </div>
       </section>
 
+      {/* Services Proposal Section */}
+      <ServicesProposal isHomeVersion={false} />
+
       {/* Features comparison section */}
       <section className="py-12 md:py-20 relative bg-gradient-to-b from-transparent via-primary/5 to-transparent">
         <div className="container mx-auto px-4">
