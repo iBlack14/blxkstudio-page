@@ -16,15 +16,15 @@ export function About() {
       <div className="container mx-auto px-4">
         <div className="max-w-6xl mx-auto space-y-16">
           {/* Header */}
-          <div className="text-center space-y-4">
+          <div className="text-center space-y-5">
             <h2 className="text-4xl md:text-5xl font-bold neon-text-sm">Sobre Nosotros</h2>
-            <p className="text-lg text-muted-foreground max-w-3xl mx-auto leading-relaxed">
+            <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto leading-loose">
               Soy Alonso, desarrollador autodidacta y emprendedor digital. Lidero <span className="text-primary font-semibold">BLXK Studio</span>, una marca enfocada en software, hosting, automatización y servicios tecnológicos para empresas y emprendedores.
             </p>
-            <p className="text-lg text-muted-foreground max-w-3xl mx-auto leading-relaxed">
+            <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto leading-loose">
               Me destaco por mi aprendizaje rápido, organización, visión técnica y creativa, ofreciendo soluciones reales adaptadas a las necesidades de cada cliente.
             </p>
-            <p className="text-lg text-muted-foreground max-w-3xl mx-auto leading-relaxed">
+            <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto leading-loose">
               Estudiante de Ingeniería Industrial en la <span className="text-primary font-medium">UTP (Chiclayo)</span> con enfoque en ética, sostenibilidad y tecnología.
             </p>
           </div>
