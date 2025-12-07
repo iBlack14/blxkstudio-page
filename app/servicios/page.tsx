@@ -3,6 +3,7 @@ import dynamic from "next/dynamic"
 import { servicesData } from "@/lib/services-data"
 import { Navigation } from "@/components/navigation"
 import { FloatingThemeToggle } from "@/components/theme-toggle"
+import { ServicesProposal } from "@/components/services-proposal"
 import Link from "next/link"
 import { ArrowRight } from "lucide-react"
 
