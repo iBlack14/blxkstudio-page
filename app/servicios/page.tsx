@@ -3,6 +3,7 @@ import dynamic from "next/dynamic"
 import { servicesData } from "@/lib/services-data"
 import { Navigation } from "@/components/navigation"
 import { FloatingThemeToggle } from "@/components/theme-toggle"
+import { ServicesProposal } from "@/components/services-proposal"
 import Link from "next/link"
 import { ArrowRight } from "lucide-react"
 
@@ -63,6 +64,9 @@ export default function ServicesPage() {
           </div>
         </div>
       </section>
+
+      {/* Services Proposal Section */}
+      <ServicesProposal isHomeVersion={false} />
 
       {/* Features comparison section */}
       <section className="py-12 md:py-20 relative bg-gradient-to-b from-transparent via-primary/5 to-transparent">

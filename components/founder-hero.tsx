@@ -79,7 +79,7 @@ export function FounderHero() {
       {/* Content container */}
       <div className="relative z-10 container mx-auto px-4 max-w-7xl">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
-          <div className={`space-y-8 transition-all duration-1000 ${isLoaded ? "opacity-100 translate-x-0" : "opacity-0 -translate-x-8"}`}>
+          <div className={`space-y-10 transition-all duration-1000 ${isLoaded ? "opacity-100 translate-x-0" : "opacity-0 -translate-x-8"}`}>
             {/* Badge */}
             <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-primary/30 bg-primary/5 backdrop-blur-sm">
               <Zap className="w-3.5 h-3.5 text-primary" />
@@ -98,7 +98,7 @@ export function FounderHero() {
             </div>
 
             {/* Main description */}
-            <div className="space-y-4 text-base md:text-lg text-muted-foreground/90 leading-relaxed max-w-lg">
+            <div className="space-y-5 text-lg md:text-xl text-muted-foreground/90 leading-loose max-w-2xl">
               <p>
                 Soy Alonso, desarrollador autodidacta y emprendedor digital. Lidero <span className="text-primary font-semibold">BLXK Studio</span>, una marca enfocada en software, hosting, automatización y servicios tecnológicos para empresas y emprendedores.
               </p>
@@ -111,9 +111,9 @@ export function FounderHero() {
             </div>
 
             {/* Stack Tecnológico */}
-            <div className="space-y-3">
-              <p className="text-xs font-semibold text-primary uppercase tracking-wider">Stack Tecnológico</p>
-              <div className="flex flex-wrap gap-2">
+            <div className="space-y-4">
+              <p className="text-sm font-semibold text-primary uppercase tracking-wider">Stack Tecnológico</p>
+              <div className="flex flex-wrap gap-3">
                 {[
                   "Next.js",
                   "React",
@@ -128,7 +128,7 @@ export function FounderHero() {
                 ].map((tech) => (
                   <span
                     key={tech}
-                    className="px-3 py-1.5 rounded-full text-xs font-medium border border-primary/30 text-primary/70 backdrop-blur-sm hover:border-primary/70 hover:text-primary transition-all duration-300 cursor-default"
+                    className="px-4 py-2 rounded-full text-sm font-medium border border-primary/30 text-primary/80 backdrop-blur-sm hover:border-primary/70 hover:text-primary transition-all duration-300 cursor-default"
                   >
                     {tech}
                   </span>
@@ -156,7 +156,7 @@ export function FounderHero() {
               {/* Main image container */}
               <div className="relative aspect-square rounded-2xl overflow-hidden border border-primary/30 bg-gradient-to-br from-card/50 to-card/20 backdrop-blur-xl group">
                 <img
-                  src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=500&h=500&fit=crop"
+                  src="/LOGO-PERFIL.png"
                   alt="Alonso - Fundador BLXK Studio"
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                 />

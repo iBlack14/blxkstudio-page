@@ -57,24 +57,24 @@ export function TechStack() {
         <div className="max-w-6xl mx-auto space-y-12">
           <div className="text-center space-y-4">
             <h2 className="text-4xl md:text-5xl font-bold neon-text-sm">Stack Tecnológico</h2>
-            <p className="text-lg text-muted-foreground">Herramientas de vanguardia para soluciones de clase mundial</p>
+            <p className="text-lg md:text-xl text-muted-foreground leading-loose">Herramientas de vanguardia para soluciones de clase mundial</p>
           </div>
 
           <div className="space-y-12">
             {techCategories.map((category, index) => (
-              <div key={index} className="space-y-6">
+              <div key={index} className="space-y-8">
                 <h3 className="text-2xl font-bold text-primary text-center">{category.category}</h3>
-                <div className="flex flex-wrap items-center justify-center gap-8">
+                <div className="flex flex-wrap items-center justify-center gap-10">
                   {category.technologies.map((tech, techIndex) => (
-                    <div key={techIndex} className="flex flex-col items-center gap-3 group">
-                      <div className="w-16 h-16 rounded-lg neon-logo-rotating p-3 flex items-center justify-center relative z-10">
+                    <div key={techIndex} className="flex flex-col items-center gap-4 group">
+                      <div className="w-18 h-18 rounded-lg neon-logo-rotating p-3 flex items-center justify-center relative z-10">
                         <img
                           src={tech.logo || "/placeholder.svg"}
                           alt={tech.name}
                           className="w-full h-full object-contain group-hover:scale-110 transition-transform relative z-10"
                         />
                       </div>
-                      <span className="text-sm text-muted-foreground group-hover:text-primary transition-colors">
+                      <span className="text-base text-muted-foreground group-hover:text-primary transition-colors text-center">
                         {tech.name}
                       </span>
                     </div>

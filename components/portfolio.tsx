@@ -60,7 +60,7 @@ export function Portfolio() {
         <div className="max-w-6xl mx-auto space-y-12">
           <div className="text-center space-y-4">
             <h2 className="text-4xl md:text-5xl font-bold neon-text-sm">Portfolio de Proyectos</h2>
-            <p className="text-lg text-muted-foreground">Soluciones reales que transforman negocios</p>
+            <p className="text-lg md:text-xl text-muted-foreground leading-loose">Soluciones reales que transforman negocios</p>
           </div>
 
           <div className="grid md:grid-cols-2 gap-6">
@@ -68,22 +68,22 @@ export function Portfolio() {
               <Card3DEffect key={index} className="h-full">
                 <div className="neon-card-rotating rounded-lg p-6 space-y-4 hover:scale-105 transition-all group h-full">
                   <div className="flex items-start justify-between">
-                    <div className="space-y-1">
+                    <div className="space-y-2">
                       <h3 className="text-xl font-bold text-foreground group-hover:text-primary transition-colors">
                         {project.name}
                       </h3>
-                      <p className="text-sm text-primary">{project.description}</p>
+                      <p className="text-base text-primary">{project.description}</p>
                     </div>
                     <ExternalLink className="w-5 h-5 text-muted-foreground group-hover:text-primary transition-colors" />
                   </div>
 
-                  <p className="text-sm text-muted-foreground leading-relaxed">{project.details}</p>
+                  <p className="text-base text-muted-foreground leading-relaxed">{project.details}</p>
 
-                  <div className="space-y-2 mt-auto">
-                    <p className="text-xs text-muted-foreground font-mono">{project.stack}</p>
+                  <div className="space-y-3 mt-auto">
+                    <p className="text-sm text-muted-foreground font-mono">{project.stack}</p>
                     <div className="flex items-center gap-2">
                       <CheckCircle2 className="w-4 h-4 text-primary" />
-                      <span className="text-xs text-primary">{project.status}</span>
+                      <span className="text-sm text-primary">{project.status}</span>
                     </div>
                   </div>
                 </div>
