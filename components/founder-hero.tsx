@@ -98,7 +98,7 @@ export function FounderHero() {
             </div>
 
             {/* Main description */}
-            <div className="space-y-4 text-base md:text-lg text-muted-foreground/90 leading-relaxed max-w-lg">
+            <div className="space-y-5 text-lg md:text-xl text-muted-foreground/90 leading-loose max-w-2xl">
               <p>
                 Soy Alonso, desarrollador autodidacta y emprendedor digital. Lidero <span className="text-primary font-semibold">BLXK Studio</span>, una marca enfocada en software, hosting, automatización y servicios tecnológicos para empresas y emprendedores.
               </p>
