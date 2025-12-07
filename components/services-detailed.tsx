@@ -287,13 +287,13 @@ export function ServicesDetailed() {
                       </div>
 
                       {/* Benefits */}
-                      <div className="space-y-2">
-                        <h4 className="text-sm font-semibold text-primary">⭐ Beneficios:</h4>
-                        <div className="grid grid-cols-1 gap-2">
+                      <div className="space-y-3">
+                        <h4 className="text-base font-semibold text-primary">⭐ Beneficios:</h4>
+                        <div className="grid grid-cols-1 gap-2.5">
                           {service.benefits.map((benefit, idx) => (
                             <div key={idx} className="flex items-start gap-2">
                               <span className="text-primary text-lg leading-none mt-0.5">→</span>
-                              <span className="text-xs text-muted-foreground">{benefit}</span>
+                              <span className="text-sm text-muted-foreground leading-relaxed">{benefit}</span>
                             </div>
                           ))}
                         </div>
