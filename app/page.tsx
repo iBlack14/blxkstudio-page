@@ -44,6 +44,7 @@ export default function Home() {
       <FounderHero />
       <About />
       <ServicesDetailed />
+      <ServicesProposal isHomeVersion={true} />
       <ProductsShowcase />
       <TechStack />
       <Suspense fallback={null}>
